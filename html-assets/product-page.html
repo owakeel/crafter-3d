@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Bambu Lab</title>
+    <link rel="stylesheet" href="../css-assets/product-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-print"></i>
+                <span>Bambu Lab</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="products.html" class="active">Products</a>
+                <a href="filaments.html">Filaments</a>
+                <a href="accessories.html">Accessories</a>
+                <a href="support.html">Support</a>
+            </div>
+            <div class="nav-actions">
+                <a href="#" class="nav-icon">
+                    <i class="fas fa-search"></i>
+                </a>
+                <a href="#" class="nav-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">2</span>
+                </a>
+                <a href="login.html" class="nav-btn">Sign In</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="products-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Revolutionary 3D Printers</h1>
+                <p>Experience the future of 3D printing with our award-winning lineup of fast, reliable, and intelligent printers.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">5x</span>
+                        <span class="stat-label">Faster Printing</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">99%</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">AI</span>
+                        <span class="stat-label">Powered</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Filter -->
+    <section class="product-filter">
+        <div class="container">
+            <div class="filter-container">
+                <div class="filter-group">
+                    <label>Filter by:</label>
+                    <div class="filter-options">
+                        <button class="filter-btn active" data-filter="all">All Printers</button>
+                        <button class="filter-btn" data-filter="flagship">Flagship</button>
+                        <button class="filter-btn" data-filter="prosumer">Prosumer</button>
+                        <button class="filter-btn" data-filter="entry">Entry Level</button>
+                    </div>
+                </div>
+                <div class="sort-group">
+                    <label>Sort by:</label>
+                    <select class="sort-select">
+                        <option value="featured">Featured</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Grid -->
+    <section class="products-grid-section">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- X1 Carbon -->
+                <div class="product-card flagship" data-price="1499">
+                    <div class="product-badge">Flagship</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581093458791-9d63f3b6b9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="X1 Carbon">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn compare" title="Add to Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                            <button class="action-btn quick-view" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">X1 Carbon</h3>
+                        <p class="product-description">The ultimate 3D printer with AI monitoring, hardened steel extruder, and active noise cancellation.</p>
+                        <div class="product-features">
+                            <span class="feature">
+                                <i class="fas fa-bolt"></i>
+                                500mm/s
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-microchip"></i>
+                                AI Detection
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-fan"></i>
+                                Enclosed
+                            </span>
+                        </div>
+                        <div class="product-specs">
+                            <div class="spec">
+                                <span class="spec-label">Build Volume</span>
+                                <span class="spec-value">256³ mm</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Max Speed</span>
+                                <span class="spec-value">500 mm/s</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Materials</span>
+                                <span class="spec-value">PLA, PETG, ABS, PA, PC</span>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$1,499.00</span>
+                            <span class="original-price">$1,699.00</span>
+                            <span class="discount">Save $200</span>
+                        </div>
+                        <div class="product-actions-main">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i>
+                                Learn More
+                            </button>
+                            <button class="btn btn-primary add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- P1S -->
+                <div class="product-card prosumer" data-price="1099">
+                    <div class="product-badge">Best Seller</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="P1S">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn compare" title="Add to Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                            <button class="action-btn quick-view" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">P1S</h3>
+                        <p class="product-description">Professional-grade enclosed 3D printer with all the core features of the X1 series at an accessible price.</p>
+                        <div class="product-features">
+                            <span class="feature">
+                                <i class="fas fa-bolt"></i>
+                                500mm/s
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-box"></i>
+                                Enclosed
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-palette"></i>
+                                Multi-Color
+                            </span>
+                        </div>
+                        <div class="product-specs">
+                            <div class="spec">
+                                <span class="spec-label">Build Volume</span>
+                                <span class="spec-value">256³ mm</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Max Speed</span>
+                                <span class="spec-value">500 mm/s</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Chamber</span>
+                                <span class="spec-value">Fully Enclosed</span>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$1,099.00</span>
+                            <span class="original-price">$1,299.00</span>
+                            <span class="discount">Save $200</span>
+                        </div>
+                        <div class="product-actions-main">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i>
+                                Learn More
+                            </button>
+                            <button class="btn btn-primary add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- P1P -->
+                <div class="product-card prosumer" data-price="799">
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581093458791-9d63f3b6b9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="P1P">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn compare" title="Add to Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                            <button class="action-btn quick-view" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">P1P</h3>
+                        <p class="product-description">High-speed open-frame 3D printer perfect for PLA and rapid prototyping with Core-XY reliability.</p>
+                        <div class="product-features">
+                            <span class="feature">
+                                <i class="fas fa-bolt"></i>
+                                500mm/s
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-rocket"></i>
+                                Core-XY
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-plug"></i>
+                                Ready to Print
+                            </span>
+                        </div>
+                        <div class="product-specs">
+                            <div class="spec">
+                                <span class="spec-label">Build Volume</span>
+                                <span class="spec-value">256³ mm</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Max Speed</span>
+                                <span class="spec-value">500 mm/s</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Frame</span>
+                                <span class="spec-value">Open Design</span>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$799.00</span>
+                            <span class="original-price">$899.00</span>
+                            <span class="discount">Save $100</span>
+                        </div>
+                        <div class="product-actions-main">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i>
+                                Learn More
+                            </button>
+                            <button class="btn btn-primary add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A1 -->
+                <div class="product-card entry" data-price="459">
+                    <div class="product-badge">New</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="A1">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn compare" title="Add to Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                            <button class="action-btn quick-view" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">A1</h3>
+                        <p class="product-description">Compact and smart 3D printer with AMS Lite support, perfect for beginners and small spaces.</p>
+                        <div class="product-features">
+                            <span class="feature">
+                                <i class="fas fa-tachometer-alt"></i>
+                                300mm/s
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-layer-group"></i>
+                                4-Color
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-compact-disc"></i>
+                                Bed Slinger
+                            </span>
+                        </div>
+                        <div class="product-specs">
+                            <div class="spec">
+                                <span class="spec-label">Build Volume</span>
+                                <span class="spec-value">256³ mm</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Max Speed</span>
+                                <span class="spec-value">300 mm/s</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Multi-Color</span>
+                                <span class="spec-value">AMS Lite Ready</span>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$459.00</span>
+                            <span class="original-price">$559.00</span>
+                            <span class="discount">Save $100</span>
+                        </div>
+                        <div class="product-actions-main">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i>
+                                Learn More
+                            </button>
+                            <button class="btn btn-primary add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- A1 Mini -->
+                <div class="product-card entry" data-price="299">
+                    <div class="product-badge">Compact</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581093458791-9d63f3b6b9b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="A1 Mini">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn compare" title="Add to Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                            <button class="action-btn quick-view" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">A1 Mini</h3>
+                        <p class="product-description">Ultra-compact and affordable 3D printer with multi-color printing capabilities.</p>
+                        <div class="product-features">
+                            <span class="feature">
+                                <i class="fas fa-tachometer-alt"></i>
+                                300mm/s
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-layer-group"></i>
+                                4-Color
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-home"></i>
+                                Compact
+                            </span>
+                        </div>
+                        <div class="product-specs">
+                            <div class="spec">
+                                <span class="spec-label">Build Volume</span>
+                                <span class="spec-value">180³ mm</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Max Speed</span>
+                                <span class="spec-value">300 mm/s</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Footprint</span>
+                                <span class="spec-value">Ultra Compact</span>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$299.00</span>
+                            <span class="original-price">$399.00</span>
+                            <span class="discount">Save $100</span>
+                        </div>
+                        <div class="product-actions-main">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i>
+                                Learn More
+                            </button>
+                            <button class="btn btn-primary add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- AMS System -->
+                <div class="product-card accessory" data-price="349">
+                    <div class="product-badge">Accessory</div>
+                    <div class="product-image">
+                        <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" alt="AMS">
+                        <div class="product-actions">
+                            <button class="action-btn wishlist" title="Add to Wishlist">
+                                <i class="far fa-heart"></i>
+                            </button>
+                            <button class="action-btn compare" title="Add to Compare">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                            <button class="action-btn quick-view" title="Quick View">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="product-title">Automatic Material System</h3>
+                        <p class="product-description">Multi-material printing system that automatically switches between up to 4 filaments.</p>
+                        <div class="product-features">
+                            <span class="feature">
+                                <i class="fas fa-palette"></i>
+                                4 Colors
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-robot"></i>
+                                Automatic
+                            </span>
+                            <span class="feature">
+                                <i class="fas fa-tags"></i>
+                                NFC Tags
+                            </span>
+                        </div>
+                        <div class="product-specs">
+                            <div class="spec">
+                                <span class="spec-label">Capacity</span>
+                                <span class="spec-value">4 Spools</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Material Detection</span>
+                                <span class="spec-value">NFC Auto</span>
+                            </div>
+                            <div class="spec">
+                                <span class="spec-label">Compatibility</span>
+                                <span class="spec-value">X1 & P1 Series</span>
+                            </div>
+                        </div>
+                        <div class="product-price">
+                            <span class="current-price">$349.00</span>
+                        </div>
+                        <div class="product-actions-main">
+                            <button class="btn btn-outline">
+                                <i class="fas fa-info-circle"></i>
+                                Learn More
+                            </button>
+                            <button class="btn btn-primary add-to-cart">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More -->
+            <div class="load-more-container">
+                <button class="btn btn-outline load-more" id="loadMore">
+                    <i class="fas fa-redo"></i>
+                    Load More Products
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Why Choose Bambu Lab?</h2>
+                <p>Experience the difference with our innovative technology</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Print up to 5x faster than traditional 3D printers with our Core-XY motion system</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3>AI Powered</h3>
+                    <p>Intelligent print monitoring and failure detection for perfect results every time</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Multi-Color</h3>
+                    <p>Automatically switch between up to 4 materials with our AMS system</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-plug"></i>
+                    </div>
+                    <h3>Ready to Print</h3>
+                    <p>Fully assembled and calibrated - start printing in under 15 minutes</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Compare Models</h2>
+                <p>Find the perfect printer for your needs</p>
+            </div>
+            <div class="comparison-table">
+                <div class="table-header">
+                    <div class="table-cell feature-header">Features</div>
+                    <div class="table-cell">X1 Carbon</div>
+                    <div class="table-cell">P1S</div>
+                    <div class="table-cell">P1P</div>
+                    <div class="table-cell">A1</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell feature">Max Print Speed</div>
+                    <div class="table-cell">500 mm/s</div>
+                    <div class="table-cell">500 mm/s</div>
+                    <div class="table-cell">500 mm/s</div>
+                    <div class="table-cell">300 mm/s</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell feature">AI Monitoring</div>
+                    <div class="table-cell"><i class="fas fa-check text-success"></i></div>
+                    <div class="table-cell"><i class="fas fa-times text-muted"></i></div>
+                    <div class="table-cell"><i class="fas fa-times text-muted"></i></div>
+                    <div class="table-cell"><i class="fas fa-times text-muted"></i></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell feature">Enclosed Chamber</div>
+                    <div class="table-cell"><i class="fas fa-check text-success"></i></div>
+                    <div class="table-cell"><i class="fas fa-check text-success"></i></div>
+                    <div class="table-cell"><i class="fas fa-times text-muted"></i></div>
+                    <div class="table-cell"><i class="fas fa-times text-muted"></i></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell feature">Multi-Color Support</div>
+                    <div class="table-cell"><i class="fas fa-check text-success"></i></div>
+                    <div class="table-cell"><i class="fas fa-check text-success"></i></div>
+                    <div class="table-cell"><i class="fas fa-check text-success"></i></div>
+                    <div class="table-cell"><i class="fas fa-check text-success"></i></div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell feature">Build Volume</div>
+                    <div class="table-cell">256³ mm</div>
+                    <div class="table-cell">256³ mm</div>
+                    <div class="table-cell">256³ mm</div>
+                    <div class="table-cell">256³ mm</div>
+                </div>
+                <div class="table-row">
+                    <div class="table-cell feature">Price</div>
+                    <div class="table-cell">$1,499</div>
+                    <div class="table-cell">$1,099</div>
+                    <div class="table-cell">$799</div>
+                    <div class="table-cell">$459</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Start Your 3D Printing Journey?</h2>
+                <p>Join thousands of makers worldwide who trust Bambu Lab for their creative projects</p>
+                <div class="cta-buttons">
+                    <a href="#productsGrid" class="btn btn-primary btn-large">
+                        <i class="fas fa-shopping-cart"></i>
+                        Shop Now
+                    </a>
+                    <a href="contact.html" class="btn btn-outline btn-large">
+                        <i class="fas fa-headset"></i>
+                        Contact Sales
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <!-- Newsletter Section -->
+            <div class="newsletter-section">
+                <h3>Be the first to receive our latest product updates, newest offerings, and free product trials.</h3>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Enter your email address">
+                    <button type="submit">Subscribe</button>
+                </div>
+            </div>
+
+            <!-- Footer Links -->
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">3D Printers</a></li>
+                        <li><a href="#">Filament</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        <li><a href="#">Maker's Supply</a></li>
+                        <li><a href="#">Speed Prints</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Software</h4>
+                    <ul>
+                        <li><a href="#">Bambu Studio</a></li>
+                        <li><a href="#">Bambu Slicer</a></li>
+                        <li><a href="#">Bambu Suite</a></li>
+                        <li><a href="#">System Status</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Support Center</a></li>
+                        <li><a href="#">Bambu Lab Academy</a></li>
+                        <li><a href="#">Filament Guide</a></li>
+                        <li><a href="#">Official Wiki</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Community</h4>
+                    <ul>
+                        <li><a href="#">MakerWorld</a></li>
+                        <li><a href="#">Facebook Group</a></li>
+                        <li><a href="#">Reddit</a></li>
+                        <li><a href="#">Forum</a></li>
+                        <li><a href="#">Discord</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Trust Center</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Cooperation</h4>
+                    <ul>
+                        <li><a href="#">Authorized Reseller</a></li>
+                        <li><a href="#">Partner with Us</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-policies">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Warranty</a>
+                    <a href="#">Cookie Policy</a>
+                    <a href="#">Cookie Settings</a>
+                </div>
+                <div class="copyright">
+                    <p>Copyright © 2025 Bambu Lab. All Rights Reserved</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quickViewModal">
+        <div class="modal-content large">
+            <div class="modal-header">
+                <h3>Quick View</h3>
+                <button class="modal-close" id="closeQuickView">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="quickViewContent">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <script src="../js-assets/product-page.js"></script>
+</body>
+</html>
