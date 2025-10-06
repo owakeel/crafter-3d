@@ -51,49 +51,216 @@
 // });
 
 // Mega Menu functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const navItems = document.querySelectorAll('.nav-item');
+        // document.addEventListener('DOMContentLoaded', function() {
+        //     const navItems = document.querySelectorAll('.nav-item');
             
-            navItems.forEach(item => {
-                item.addEventListener('mouseenter', function() {
-                    // Close all other mega menus
-                    navItems.forEach(otherItem => {
-                        if (otherItem !== item) {
-                            const otherMegaMenu = otherItem.querySelector('.mega-menu');
-                            if (otherMegaMenu) {
-                                otherMegaMenu.style.display = 'none';
-                            }
-                        }
-                    });
+        //     navItems.forEach(item => {
+        //         item.addEventListener('mouseenter', function() {
+        //             // Close all other mega menus
+        //             navItems.forEach(otherItem => {
+        //                 if (otherItem !== item) {
+        //                     const otherMegaMenu = otherItem.querySelector('.mega-menu');
+        //                     if (otherMegaMenu) {
+        //                         otherMegaMenu.style.display = 'none';
+        //                     }
+        //                 }
+        //             });
                     
-                    // Open current mega menu if it exists
-                    const megaMenu = this.querySelector('.mega-menu');
-                    if (megaMenu) {
-                        megaMenu.style.display = 'grid';
-                    }
-                });
+        //             // Open current mega menu if it exists
+        //             const megaMenu = this.querySelector('.mega-menu');
+        //             if (megaMenu) {
+        //                 megaMenu.style.display = 'grid';
+        //             }
+        //         });
                 
-                item.addEventListener('mouseleave', function() {
-                    const megaMenu = this.querySelector('.mega-menu');
-                    if (megaMenu) {
-                        // Small delay before closing to allow moving to mega menu
-                        setTimeout(() => {
-                            if (!megaMenu.matches(':hover') && !this.matches(':hover')) {
-                                megaMenu.style.display = 'none';
-                            }
-                        }, 100);
-                    }
-                });
+        //         item.addEventListener('mouseleave', function() {
+        //             const megaMenu = this.querySelector('.mega-menu');
+        //             if (megaMenu) {
+        //                 // Small delay before closing to allow moving to mega menu
+        //                 setTimeout(() => {
+        //                     if (!megaMenu.matches(':hover') && !this.matches(':hover')) {
+        //                         megaMenu.style.display = 'none';
+        //                     }
+        //                 }, 100);
+        //             }
+        //         });
                 
-                const megaMenu = item.querySelector('.mega-menu');
-                if (megaMenu) {
-                    megaMenu.addEventListener('mouseleave', function() {
-                        this.style.display = 'none';
-                    });
+        //         const megaMenu = item.querySelector('.mega-menu');
+        //         if (megaMenu) {
+        //             megaMenu.addEventListener('mouseleave', function() {
+        //                 this.style.display = 'none';
+        //             });
+        //         }
+        //     });
+
+        //     // Carousel functionality
+        //     const carouselInner = document.querySelector('.carousel-inner');
+        //     const carouselItems = document.querySelectorAll('.carousel-item');
+        //     const prevButton = document.querySelector('.carousel-control.prev');
+        //     const nextButton = document.querySelector('.carousel-control.next');
+        //     const indicators = document.querySelectorAll('.indicator');
+
+        //     let currentSlide = 0;
+        //     const totalSlides = carouselItems.length;
+
+        //     // Function to show a specific slide
+        //     function showSlide(index) {
+        //         // Hide all slides
+        //         carouselItems.forEach(item => {
+        //             item.classList.remove('active');
+        //         });
+
+        //         // Remove active class from all indicators
+        //         indicators.forEach(indicator => {
+        //             indicator.classList.remove('active');
+        //         });
+
+        //         // Show the selected slide
+        //         carouselItems[index].classList.add('active');
+
+        //         // Update the active indicator
+        //         indicators[index].classList.add('active');
+
+        //         // Update current slide
+        //         currentSlide = index;
+        //     }
+
+        //     // Function to show next slide
+        //     function nextSlide() {
+        //         let nextIndex = (currentSlide + 1) % totalSlides;
+        //         showSlide(nextIndex);
+        //     }
+
+        //     // Function to show previous slide
+        //     function prevSlide() {
+        //         let prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+        //         showSlide(prevIndex);
+        //     }
+
+        //     // Auto slide every 5 seconds
+        //     let slideInterval = setInterval(nextSlide, 5000);
+
+        //     // Event listeners for controls
+        //     prevButton.addEventListener('click', function() {
+        //         prevSlide();
+        //         resetInterval();
+        //     });
+
+        //     nextButton.addEventListener('click', function() {
+        //         nextSlide();
+        //         resetInterval();
+        //     });
+
+        //     // Event listeners for indicators
+        //     indicators.forEach((indicator, index) => {
+        //         indicator.addEventListener('click', function() {
+        //             showSlide(index);
+        //             resetInterval();
+        //         });
+        //     });
+
+        //     // Reset interval when user interacts with carousel
+        //     function resetInterval() {
+        //         clearInterval(slideInterval);
+        //         slideInterval = setInterval(nextSlide, 5000);
+        //     }
+
+        //     // Pause carousel on hover
+        //     carouselInner.addEventListener('mouseenter', function() {
+        //         clearInterval(slideInterval);
+        //     });
+
+        //     carouselInner.addEventListener('mouseleave', function() {
+        //         resetInterval();
+        //     });
+
+        //     // Keyboard navigation
+        //     document.addEventListener('keydown', function(e) {
+        //         if (e.key === 'ArrowLeft') {
+        //             prevSlide();
+        //             resetInterval();
+        //         } else if (e.key === 'ArrowRight') {
+        //             nextSlide();
+        //             resetInterval();
+        //         }
+        //     });
+
+        //     // Touch swipe support for mobile devices
+        //     let touchStartX = 0;
+        //     let touchEndX = 0;
+
+        //     carouselInner.addEventListener('touchstart', function(e) {
+        //         touchStartX = e.changedTouches[0].screenX;
+        //     });
+
+        //     carouselInner.addEventListener('touchend', function(e) {
+        //         touchEndX = e.changedTouches[0].screenX;
+        //         handleSwipe();
+        //     });
+
+        //     function handleSwipe() {
+        //         const swipeThreshold = 50;
+
+        //         if (touchEndX < touchStartX - swipeThreshold) {
+        //             // Swipe left - next slide
+        //             nextSlide();
+        //             resetInterval();
+        //         } else if (touchEndX > touchStartX + swipeThreshold) {
+        //             // Swipe right - previous slide
+        //             prevSlide();
+        //             resetInterval();
+        //         }
+        //     }
+        // });
+
+
+ // Navbar Script
+ document.addEventListener('DOMContentLoaded', function () {
+    const navItems = document.querySelectorAll('.nav-item');
+    const navToggle = document.querySelector('.nav-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+
+    // Toggle menu on mobile
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+    });
+
+    // Close menu when clicking outside (mobile/tablet only)
+    document.addEventListener('click', function (e) {
+        if (window.innerWidth <= 991) {
+            if (!navMenu.contains(e.target) && !navToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+            }
+        }
+    });
+
+    // Close menu when clicking on nav link (mobile)
+    document.querySelectorAll('.nav-item').forEach(item => {
+        item.addEventListener('click', () => {
+            if (window.innerWidth <= 991) {
+                navMenu.classList.remove('active');
+            }
+        });
+    });
+
+    // Mega menu handling
+    navItems.forEach(item => {
+        const megaMenu = item.querySelector('.mega-menu');
+        if (megaMenu) {
+            item.addEventListener('click', function (e) {
+                if (window.innerWidth <= 991) {
+                    e.preventDefault();
+                    item.classList.toggle('open');
                 }
             });
+        }
+    });
+});
 
-            // Carousel functionality
+
+
+// Carousel Script
+        document.addEventListener('DOMContentLoaded', function () {
             const carouselInner = document.querySelector('.carousel-inner');
             const carouselItems = document.querySelectorAll('.carousel-item');
             const prevButton = document.querySelector('.carousel-control.prev');
@@ -103,115 +270,74 @@
             let currentSlide = 0;
             const totalSlides = carouselItems.length;
 
-            // Function to show a specific slide
             function showSlide(index) {
-                // Hide all slides
-                carouselItems.forEach(item => {
-                    item.classList.remove('active');
-                });
+                carouselItems.forEach(item => item.classList.remove('active'));
+                indicators.forEach(indicator => indicator.classList.remove('active'));
 
-                // Remove active class from all indicators
-                indicators.forEach(indicator => {
-                    indicator.classList.remove('active');
-                });
-
-                // Show the selected slide
                 carouselItems[index].classList.add('active');
-
-                // Update the active indicator
                 indicators[index].classList.add('active');
-
-                // Update current slide
                 currentSlide = index;
             }
 
-            // Function to show next slide
             function nextSlide() {
                 let nextIndex = (currentSlide + 1) % totalSlides;
                 showSlide(nextIndex);
             }
 
-            // Function to show previous slide
             function prevSlide() {
                 let prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
                 showSlide(prevIndex);
             }
 
-            // Auto slide every 5 seconds
             let slideInterval = setInterval(nextSlide, 5000);
 
-            // Event listeners for controls
-            prevButton.addEventListener('click', function() {
+            prevButton.addEventListener('click', () => {
                 prevSlide();
                 resetInterval();
             });
 
-            nextButton.addEventListener('click', function() {
+            nextButton.addEventListener('click', () => {
                 nextSlide();
                 resetInterval();
             });
 
-            // Event listeners for indicators
             indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', function() {
+                indicator.addEventListener('click', () => {
                     showSlide(index);
                     resetInterval();
                 });
             });
 
-            // Reset interval when user interacts with carousel
             function resetInterval() {
                 clearInterval(slideInterval);
                 slideInterval = setInterval(nextSlide, 5000);
             }
 
-            // Pause carousel on hover
-            carouselInner.addEventListener('mouseenter', function() {
-                clearInterval(slideInterval);
+            // Pause on hover
+            carouselInner.addEventListener('mouseenter', () => clearInterval(slideInterval));
+            carouselInner.addEventListener('mouseleave', resetInterval);
+
+            // Keyboard control
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft') { prevSlide(); resetInterval(); }
+                else if (e.key === 'ArrowRight') { nextSlide(); resetInterval(); }
             });
 
-            carouselInner.addEventListener('mouseleave', function() {
-                resetInterval();
-            });
-
-            // Keyboard navigation
-            document.addEventListener('keydown', function(e) {
-                if (e.key === 'ArrowLeft') {
-                    prevSlide();
-                    resetInterval();
-                } else if (e.key === 'ArrowRight') {
-                    nextSlide();
-                    resetInterval();
-                }
-            });
-
-            // Touch swipe support for mobile devices
-            let touchStartX = 0;
-            let touchEndX = 0;
-
-            carouselInner.addEventListener('touchstart', function(e) {
-                touchStartX = e.changedTouches[0].screenX;
-            });
-
-            carouselInner.addEventListener('touchend', function(e) {
+            // Touch swipe
+            let touchStartX = 0, touchEndX = 0;
+            carouselInner.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
+            carouselInner.addEventListener('touchend', e => {
                 touchEndX = e.changedTouches[0].screenX;
                 handleSwipe();
             });
 
             function handleSwipe() {
                 const swipeThreshold = 50;
-
-                if (touchEndX < touchStartX - swipeThreshold) {
-                    // Swipe left - next slide
-                    nextSlide();
-                    resetInterval();
-                } else if (touchEndX > touchStartX + swipeThreshold) {
-                    // Swipe right - previous slide
-                    prevSlide();
-                    resetInterval();
-                }
+                if (touchEndX < touchStartX - swipeThreshold) { nextSlide(); resetInterval(); }
+                else if (touchEndX > touchStartX + swipeThreshold) { prevSlide(); resetInterval(); }
             }
         });
+
 
 // Tools Section functionality
 // document.addEventListener('DOMContentLoaded', function () {
