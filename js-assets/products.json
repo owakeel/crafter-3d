@@ -1,0 +1,150 @@
+{
+  "products": [
+    {
+      "id": "x1-carbon",
+      "name": "X1 Carbon",
+      "category": "flagship",
+      "badge": "Flagship",
+      "price": {
+        "current": 1499.00,
+        "original": 1699.00,
+        "currency": "USD",
+        "discount": 200
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1581094794359-d9d6db6a259c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+        "https://images.unsplash.com/photo-1581094794361-9698872d9b43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "description": "The ultimate 3D printer with AI monitoring, hardened steel extruder, and active noise cancellation.",
+      "features": [
+        {
+          "icon": "fas fa-bolt",
+          "text": "500mm/s Printing Speed"
+        },
+        {
+          "icon": "fas fa-microchip",
+          "text": "AI-Powered Failure Detection"
+        },
+        {
+          "icon": "fas fa-fan",
+          "text": "Fully Enclosed Chamber"
+        },
+        {
+          "icon": "fas fa-volume-mute",
+          "text": "Active Noise Cancellation"
+        }
+      ],
+      "specifications": {
+        "buildVolume": "256 × 256 × 256 mm",
+        "maxPrintSpeed": "500 mm/s",
+        "maxTravelSpeed": "600 mm/s",
+        "noiseLevel": "≤ 50 dB",
+        "supportedMaterials": ["PLA", "PETG", "ABS", "ASA", "PA", "PC", "TPU"],
+        "nozzleTemperature": "Max 300°C",
+        "bedTemperature": "Max 120°C",
+        "connectivity": ["Wi-Fi", "Ethernet", "USB"],
+        "dimensions": "389 × 389 × 457 mm",
+        "weight": "18.5 kg"
+      },
+      "colors": [
+        {
+          "name": "black",
+          "code": "#2c3e50",
+          "image": "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+        },
+        {
+          "name": "silver",
+          "code": "#bdc3c7",
+          "image": "https://images.unsplash.com/photo-1581094794359-d9d6db6a259c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+        }
+      ],
+      "accessories": [
+        {
+          "id": "ams-system",
+          "name": "AMS Multi-Color System",
+          "price": 349.00,
+          "description": "Add AMS Multi-Color System for 4-color printing"
+        }
+      ],
+      "rating": {
+        "average": 4.7,
+        "count": 128,
+        "breakdown": {
+          "5": 75,
+          "4": 15,
+          "3": 7,
+          "2": 2,
+          "1": 1
+        }
+      },
+      "reviews": [
+        {
+          "id": "rev-001",
+          "author": "Michael T.",
+          "date": "2023-03-15",
+          "rating": 5,
+          "title": "Game Changer for My Business",
+          "content": "The X1 Carbon has completely transformed my prototyping workflow. The speed and reliability are unmatched.",
+          "verified": true
+        },
+        {
+          "id": "rev-002",
+          "author": "Sarah J.",
+          "date": "2023-02-28",
+          "rating": 4.5,
+          "title": "Impressive Out of the Box",
+          "content": "I was printing within 30 minutes of unboxing. The setup was incredibly straightforward.",
+          "verified": true
+        }
+      ],
+      "inStock": true,
+      "sku": "BL-X1C-001",
+      "tags": ["3d-printer", "flagship", "ai", "enclosed", "high-speed"],
+      "meta": {
+        "warranty": "2 years",
+        "shipping": "Free worldwide",
+        "returnPolicy": "30 days"
+      }
+    },
+    {
+      "id": "p1s",
+      "name": "P1S",
+      "category": "prosumer",
+      "badge": "Best Seller",
+      "price": {
+        "current": 1099.00,
+        "original": 1299.00,
+        "currency": "USD",
+        "discount": 200
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+      ],
+      "description": "Professional-grade enclosed 3D printer with all the core features of the X1 series at an accessible price.",
+      "features": [
+        {
+          "icon": "fas fa-bolt",
+          "text": "500mm/s Printing Speed"
+        },
+        {
+          "icon": "fas fa-box",
+          "text": "Fully Enclosed"
+        },
+        {
+          "icon": "fas fa-palette",
+          "text": "Multi-Color Ready"
+        }
+      ],
+      "specifications": {
+        "buildVolume": "256 × 256 × 256 mm",
+        "maxPrintSpeed": "500 mm/s",
+        "maxTravelSpeed": "600 mm/s",
+        "supportedMaterials": ["PLA", "PETG", "ABS", "ASA"],
+        "connectivity": ["Wi-Fi", "Ethernet", "USB"]
+      },
+      "inStock": true,
+      "sku": "BL-P1S-001"
+    }
+  ]
+}

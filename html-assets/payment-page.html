@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout -> crafter-3d</title>
+    <link rel="stylesheet" href="../css-assets/payment-page.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <div class="nav-brand">
+                    <img src="../images/logo.png" alt="">
+                </div>
+                <div class="checkout-steps">
+                    <div class="step active">
+                        <span class="step-number">1</span>
+                        <span class="step-text">Cart</span>
+                    </div>
+                    <div class="step active">
+                        <span class="step-number">2</span>
+                        <span class="step-text">Information</span>
+                    </div>
+                    <div class="step active">
+                        <span class="step-number">3</span>
+                        <span class="step-text">Payment</span>
+                    </div>
+                    <div class="step">
+                        <span class="step-number">4</span>
+                        <span class="step-text">Confirmation</span>
+                    </div>
+                </div>
+                <div class="secure-badge">
+                    <i class="fas fa-lock"></i>
+                    <span>Secure Checkout</span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <div class="checkout-grid">
+                <!-- Payment Form -->
+                <div class="payment-section">
+                    <div class="section-header">
+                        <h2><i class="fas fa-credit-card"></i> Payment Method</h2>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="payment-methods">
+                        <div class="payment-method active" data-method="card">
+                            <i class="fab fa-cc-visa"></i>
+                            <span>Credit/Debit Card</span>
+                        </div>
+                        <div class="payment-method" data-method="paypal">
+                            <i class="fab fa-paypal"></i>
+                            <span>PayPal</span>
+                        </div>
+                        <div class="payment-method" data-method="applepay">
+                            <i class="fab fa-apple-pay"></i>
+                            <span>Apple Pay</span>
+                        </div>
+                    </div>
+
+                    <!-- Card Payment Form -->
+                    <form class="payment-form active" id="cardForm">
+                        <div class="form-group">
+                            <label for="cardNumber">Card Number</label>
+                            <div class="input-with-icon">
+                                <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="card-icons">
+                                <i class="fab fa-cc-visa"></i>
+                                <i class="fab fa-cc-mastercard"></i>
+                                <i class="fab fa-cc-amex"></i>
+                                <i class="fab fa-cc-discover"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="expiryDate">Expiry Date</label>
+                                <input type="text" id="expiryDate" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label for="cvv">CVV</label>
+                                <div class="input-with-icon">
+                                    <input type="text" id="cvv" placeholder="123" maxlength="4">
+                                    <i class="fas fa-question-circle" title="3-digit code on back of card"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="cardholderName">Cardholder Name</label>
+                            <input type="text" id="cardholderName" placeholder="John Doe">
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="saveCard">
+                            <label for="saveCard">Save card for future purchases</label>
+                        </div>
+                    </form>
+
+                    <!-- PayPal Form -->
+                    <form class="payment-form" id="paypalForm">
+                        <div class="paypal-info">
+                            <i class="fab fa-paypal"></i>
+                            <p>You will be redirected to PayPal to complete your payment securely.</p>
+                            <button type="button" class="btn btn-paypal" id="paypalBtn">
+                                <i class="fab fa-paypal"></i>
+                                Continue with PayPal
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Apple Pay Form -->
+                    <form class="payment-form" id="applepayForm">
+                        <div class="applepay-info">
+                            <i class="fab fa-apple-pay"></i>
+                            <p>Pay securely with Apple Pay using your device.</p>
+                            <button type="button" class="btn btn-applepay" id="applepayBtn">
+                                <i class="fab fa-apple-pay"></i>
+                                Pay with Apple Pay
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Billing Address -->
+                    <div class="billing-address">
+                        <div class="section-header">
+                            <h2><i class="fas fa-map-marker-alt"></i> Billing Address</h2>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="sameAsShipping" checked>
+                            <label for="sameAsShipping">Same as shipping address</label>
+                        </div>
+
+                        <div class="billing-form" id="billingForm" style="display: none;">
+                            <div class="form-group">
+                                <label for="billingAddress">Address</label>
+                                <input type="text" id="billingAddress" placeholder="123 Main St">
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="billingCity">City</label>
+                                    <input type="text" id="billingCity" placeholder="New York">
+                                </div>
+                                <div class="form-group">
+                                    <label for="billingState">State</label>
+                                    <select id="billingState">
+                                        <option value="">Select State</option>
+                                        <option value="CA">California</option>
+                                        <option value="NY">New York</option>
+                                        <option value="TX">Texas</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="billingZip">ZIP Code</label>
+                                    <input type="text" id="billingZip" placeholder="10001">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="action-buttons">
+                        <button class="btn btn-outline" id="backBtn">
+                            <i class="fas fa-arrow-left"></i>
+                            Back to Information
+                        </button>
+                        <button class="btn btn-primary" id="placeOrderBtn">
+                            <i class="fas fa-lock"></i>
+                            Place Order
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="order-summary">
+                    <div class="summary-card">
+                        <h3>Order Summary</h3>
+                        
+                        <!-- Order Items -->
+                        <div class="order-items">
+                            <div class="order-item">
+                                <div class="item-image">
+                                    <img src="../images/Pieza 1.png" alt="X1 Carbon">
+                                </div>
+                                <div class="item-details">
+                                    <h4>X1 Carbon 3D Printer</h4>
+                                    <p class="item-variant">Color: Black • With AMS</p>
+                                    <div class="item-price">$1,499.00</div>
+                                </div>
+                                <div class="item-quantity">Qty: 1</div>
+                            </div>
+                            
+                            <div class="order-item">
+                                <div class="item-image">
+                                    <img src="../images/Premio fondo vídeo.png" alt="AMS">
+                                </div>
+                                <div class="item-details">
+                                    <h4>AMS Multi-Color System</h4>
+                                    <p class="item-variant">4-color printing</p>
+                                    <div class="item-price">$349.00</div>
+                                </div>
+                                <div class="item-quantity">Qty: 1</div>
+                            </div>
+                        </div>
+
+                        <!-- Pricing Breakdown -->
+                        <div class="pricing-breakdown">
+                            <div class="price-row">
+                                <span>Subtotal</span>
+                                <span>$1,848.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Shipping</span>
+                                <span>$0.00</span>
+                            </div>
+                            <div class="price-row">
+                                <span>Tax</span>
+                                <span>$147.84</span>
+                            </div>
+                            <div class="price-row discount">
+                                <span>Discount</span>
+                                <span>-$200.00</span>
+                            </div>
+                            <div class="price-row total">
+                                <span>Total</span>
+                                <span>$1,795.84</span>
+                            </div>
+                        </div>
+
+                        <!-- Promo Code -->
+                        <div class="promo-code">
+                            <div class="form-group">
+                                <label for="promoCode">Promo Code</label>
+                                <div class="promo-input-group">
+                                    <input type="text" id="promoCode" placeholder="Enter code">
+                                    <button class="btn btn-outline" id="applyPromo">Apply</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Security Badges -->
+                        <div class="security-badges">
+                            <div class="security-badge">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>SSL Secure</span>
+                            </div>
+                            <div class="security-badge">
+                                <i class="fas fa-lock"></i>
+                                <span>256-bit Encryption</span>
+                            </div>
+                            <div class="security-badge">
+                                <i class="fas fa-user-shield"></i>
+                                <span>PCI Compliant</span>
+                            </div>
+                        </div>
+
+                        <!-- Trust Indicators -->
+                        <div class="trust-indicators">
+                            <div class="trust-item">
+                                <i class="fas fa-truck"></i>
+                                <span>Free Worldwide Shipping</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-undo"></i>
+                                <span>30-Day Money Back</span>
+                            </div>
+                            <div class="trust-item">
+                                <i class="fas fa-headset"></i>
+                                <span>24/7 Support</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner"></div>
+            <p>Processing your payment...</p>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal">
+            <div class="modal-header">
+                <i class="fas fa-check-circle success-icon"></i>
+                <h3>Payment Successful!</h3>
+            </div>
+            <div class="modal-body">
+                <p>Thank you for your order. Your payment has been processed successfully.</p>
+                <div class="order-details">
+                    <div class="detail-row">
+                        <span>Order Number:</span>
+                        <span>BL-2023-789456</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Amount Paid:</span>
+                        <span>$1,795.84</span>
+                    </div>
+                    <div class="detail-row">
+                        <span>Estimated Delivery:</span>
+                        <span>3-5 business days</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="continueShopping">Continue Shopping</button>
+                <button class="btn btn-primary" id="viewOrder">View Order Details</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js-assets/payment-page.js"></script>
+</body>
+</html>
