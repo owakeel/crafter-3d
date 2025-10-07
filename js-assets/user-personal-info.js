@@ -55,6 +55,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     const avatarImage = document.querySelector('.avatar-image');
                     avatarImage.src = e.target.result;
                     showSuccess('Profile picture updated successfully!');
+                    
+                    // Laravel Integration: Send AJAX request to upload image to server
+                    // Example: 
+                    // const formData = new FormData();
+                    // formData.append('avatar', file);
+                    // formData.append('_token', '{{ csrf_token() }}');
+                    // fetch('/profile/update-avatar', { 
+                    //     method: 'POST', 
+                    //     body: formData 
+                    // })
+                    // .then(response => response.json())
+                    // .then(data => {
+                    //     if(data.success) {
+                    //         showSuccess('Avatar updated successfully!');
+                    //     }
+                    // })
+                    // .catch(error => console.error('Error:', error));
                 };
                 reader.readAsDataURL(file);
             }
@@ -70,6 +87,23 @@ document.addEventListener('DOMContentLoaded', function() {
         const avatarImage = document.querySelector('.avatar-image');
         avatarImage.src = 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80';
         showSuccess('Profile picture removed!');
+        
+        // Laravel Integration: Send AJAX request to remove avatar from server
+        // Example: 
+        // fetch('/profile/remove-avatar', { 
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json',
+        //         'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        //     }
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //     if(data.success) {
+        //         showSuccess('Avatar removed successfully!');
+        //     }
+        // })
+        // .catch(error => console.error('Error:', error));
     });
 
     // Bio character counter
@@ -126,7 +160,7 @@ document.addEventListener('DOMContentLoaded', function() {
         socialLinksContainer.insertBefore(newSocialLink, addSocialLinkBtn);
     });
 
-    // Form submission
+    // Form submission - Main Laravel Integration Point
     const personalForm = document.getElementById('personalForm');
     
     personalForm.addEventListener('submit', function(e) {
@@ -146,7 +180,46 @@ document.addEventListener('DOMContentLoaded', function() {
         saveBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
         saveBtn.disabled = true;
         
-        // Simulate API call
+        // Laravel Integration: Send form data to server via AJAX
+        // Example implementation:
+        // const formData = new FormData(personalForm);
+        
+        // // Collect social links data
+        // const socialLinks = [];
+        // document.querySelectorAll('.social-link-item').forEach(item => {
+        //     const platform = item.querySelector('.social-platform').value;
+        //     const username = item.querySelector('.social-username').value;
+        //     if (username.trim()) {
+        //         socialLinks.push({ platform, username });
+        //     }
+        // });
+        
+        // formData.append('social_links', JSON.stringify(socialLinks));
+        
+        // fetch('/profile/update', {
+        //     method: 'POST',
+        //     body: formData,
+        //     headers: {
+        //         'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        //     }
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //     if (data.success) {
+        //         showSuccess('Profile updated successfully!');
+        //     } else {
+        //         showError(data.message || 'Error updating profile');
+        //     }
+        // })
+        // .catch(error => {
+        //     showError('Network error occurred');
+        // })
+        // .finally(() => {
+        //     saveBtn.innerHTML = originalText;
+        //     saveBtn.disabled = false;
+        // });
+
+        // Simulate API call (remove this in actual implementation)
         setTimeout(() => {
             saveBtn.innerHTML = originalText;
             saveBtn.disabled = false;
@@ -160,22 +233,44 @@ document.addEventListener('DOMContentLoaded', function() {
         if (confirm('Are you sure you want to discard your changes?')) {
             personalForm.reset();
             showMessage('Changes discarded', 'info');
+            
+            // Laravel Integration: Optionally reload data from server
+            // window.location.reload(); // or fetch current data
         }
     });
 
-    // Change email
+    // Change email - Laravel Integration
     const changeEmailBtn = document.getElementById('changeEmail');
     changeEmailBtn.addEventListener('click', function() {
         showMessage('Email change functionality would open here', 'info');
+        
+        // Laravel Integration: Open email change modal or redirect
+        // Example: window.location.href = '/profile/change-email';
     });
 
-    // Verify phone
+    // Verify phone - Laravel Integration
     const verifyPhoneBtn = document.getElementById('verifyPhone');
     verifyPhoneBtn.addEventListener('click', function() {
         showMessage('Phone verification process would start here', 'info');
+        
+        // Laravel Integration: Initiate phone verification process
+        // Example: 
+        // fetch('/profile/send-phone-verification', {
+        //     method: 'POST',
+        //     headers: {
+        //         'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        //     }
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //     if(data.success) {
+        //         // Show verification code input modal
+        //         showVerificationModal();
+        //     }
+        // });
     });
 
-    // Password modal functionality
+    // Password modal functionality - Laravel Integration
     const changePasswordBtn = document.getElementById('changePassword');
     const passwordModal = document.getElementById('passwordModal');
     const closePasswordModal = document.getElementById('closePasswordModal');
@@ -217,7 +312,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Password form submission
+    // Password form submission - Laravel Integration
     passwordForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -236,7 +331,31 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Simulate password change
+        // Laravel Integration: Send password change request to server
+        // Example:
+        // const formData = new FormData(passwordForm);
+        // fetch('/profile/change-password', {
+        //     method: 'POST',
+        //     body: formData,
+        //     headers: {
+        //         'X-CSRF-TOKEN': '{{ csrf_token() }}'
+        //     }
+        // })
+        // .then(response => response.json())
+        // .then(data => {
+        //     if (data.success) {
+        //         passwordModal.style.display = 'none';
+        //         passwordForm.reset();
+        //         showSuccess('Password updated successfully!');
+        //     } else {
+        //         showError(data.message || 'Error changing password');
+        //     }
+        // })
+        // .catch(error => {
+        //     showError('Network error occurred');
+        // });
+
+        // Simulate password change (remove this in actual implementation)
         const submitBtn = this.querySelector('button[type="submit"]');
         const originalText = submitBtn.textContent;
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Updating...';
@@ -251,17 +370,36 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 2000);
     });
 
-    // Enable 2FA
+    // Enable 2FA - Laravel Integration
     const enable2FABtn = document.getElementById('enable2FA');
     enable2FABtn.addEventListener('click', function() {
         showMessage('Two-factor authentication setup would start here', 'info');
+        
+        // Laravel Integration: Initiate 2FA setup process
+        // Example: window.location.href = '/profile/two-factor-authentication';
     });
 
-    // Delete account
+    // Delete account - Laravel Integration
     const deleteAccountBtn = document.getElementById('deleteAccount');
     deleteAccountBtn.addEventListener('click', function() {
         if (confirm('Are you sure you want to delete your account? This action cannot be undone and all your data will be permanently lost.')) {
             showMessage('Account deletion process would start here', 'warning');
+            
+            // Laravel Integration: Send account deletion request
+            // Example:
+            // fetch('/profile/delete-account', {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json',
+            //         'X-CSRF-TOKEN': '{{ csrf_token() }}'
+            //     }
+            // })
+            // .then(response => response.json())
+            // .then(data => {
+            //     if(data.success) {
+            //         window.location.href = '/goodbye';
+            //     }
+            // });
         }
     });
 
@@ -410,9 +548,33 @@ document.addEventListener('DOMContentLoaded', function() {
     `;
     document.head.appendChild(style);
 
-    // Initialize form with current values
+    // Initialize form with current values - Laravel Integration
     function initializeForm() {
-        // This would typically fetch data from an API
+        // Laravel Integration: Fetch current user data from server
+        // Example:
+        // fetch('/profile/get-data')
+        // .then(response => response.json())
+        // .then(data => {
+        //     // Populate form fields with user data
+        //     document.getElementById('firstName').value = data.first_name || '';
+        //     document.getElementById('lastName').value = data.last_name || '';
+        //     document.getElementById('username').value = data.username || '';
+        //     document.getElementById('email').value = data.email || '';
+        //     document.getElementById('phone').value = data.phone || '';
+        //     document.getElementById('bio').value = data.bio || '';
+        //     
+        //     // Populate social links
+        //     if (data.social_links) {
+        //         data.social_links.forEach(link => {
+        //             const newSocialLink = createSocialLinkItem();
+        //             newSocialLink.querySelector('.social-platform').value = link.platform;
+        //             newSocialLink.querySelector('.social-username').value = link.username;
+        //             socialLinksContainer.insertBefore(newSocialLink, addSocialLinkBtn);
+        //         });
+        //     }
+        // })
+        // .catch(error => console.error('Error fetching user data:', error));
+
         console.log('Initializing form with user data...');
     }
 

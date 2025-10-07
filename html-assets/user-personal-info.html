@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ========== META & PAGE CONFIGURATION ========== -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Information</title>
+
+    <!-- ========== EXTERNAL STYLES ========== -->
+    <!-- Main CSS file for personal info page -->
+    <!-- In Laravel: <link rel="stylesheet" href="{{ asset('css-assets/user-personal-Info.css') }}"> -->
     <link rel="stylesheet" href="../css-assets/user-personal-Info.css">
+
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
-    <!-- Navigation -->
 
-    <!-- Main Content -->
+<body>
+    <!-- ===========================
+         PERSONAL INFORMATION PAGE
+         ===========================
+         Structure:
+         1. Sidebar Navigation
+         2. Main Content Sections (Profile, Security, Privacy)
+         3. Change Password Modal
+    -->
+
+    <!-- ========== MAIN WRAPPER CONTAINER ========== -->
     <div class="personal-info-container">
-        <!-- Sidebar -->
+
+        <!-- =========================================
+             SIDEBAR SECTION – Navigation links
+             ========================================= -->
         <aside class="info-sidebar">
             <div class="sidebar-header">
                 <h2>Account Settings</h2>
             </div>
+
+            <!-- Sidebar Navigation Links -->
+            <!-- Each link targets a specific section using #id -->
             <nav class="sidebar-nav">
                 <a href="#profile" class="nav-item active">
                     <i class="fas fa-user-circle"></i>
@@ -49,25 +70,36 @@
             </nav>
         </aside>
 
-        <!-- Main Content -->
+        <!-- =========================================
+             MAIN CONTENT AREA – Contains all sections
+             ========================================= -->
         <main class="info-main">
-            <!-- Profile Information Section -->
+
+            <!-- =======================================================
+                 SECTION: Profile Information
+                 ======================================================= -->
             <section id="profile" class="info-section active">
                 <div class="section-header">
                     <h1>Profile Information</h1>
-                    <p>Manage your personal details and how you appear on Bambu Lab</p>
+                    <p>Manage your personal details and how you appear on Crafter-3D</p>
                 </div>
 
                 <div class="profile-content">
-                    <!-- Avatar Section -->
+                    <!-- ================= AVATAR / PROFILE IMAGE ================= -->
                     <div class="avatar-section">
                         <div class="avatar-container">
+
+                            <!-- Avatar Image Preview -->
                             <div class="avatar-preview">
-                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&q=80" alt="Profile" class="avatar-image">
+                                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=500&q=80" 
+                                     alt="Profile" class="avatar-image">
+                                <!-- Hover overlay with camera icon -->
                                 <div class="avatar-overlay">
                                     <i class="fas fa-camera"></i>
                                 </div>
                             </div>
+
+                            <!-- Avatar Action Buttons -->
                             <div class="avatar-actions">
                                 <button class="btn btn-secondary" id="changeAvatar">
                                     <i class="fas fa-upload"></i>
@@ -78,25 +110,35 @@
                                     Remove
                                 </button>
                             </div>
-                            <p class="avatar-help">Recommended: Square JPG, PNG, at least 400x400 pixels</p>
+
+                            <!-- Avatar Image Guidelines -->
+                            <p class="avatar-help">
+                                Recommended: Square JPG, PNG, at least 400x400 pixels
+                            </p>
                         </div>
                     </div>
 
-                    <!-- Personal Information Form -->
+                    <!-- ================= PERSONAL INFORMATION FORM ================= -->
                     <form class="personal-form" id="personalForm">
+                        
+                        <!-- ===== Basic Information Section ===== -->
                         <div class="form-section">
                             <h3>Basic Information</h3>
                             <div class="form-row">
+                                <!-- First Name -->
                                 <div class="form-group">
                                     <label for="firstName">First Name *</label>
                                     <input type="text" id="firstName" name="firstName" value="John" required>
                                 </div>
+
+                                <!-- Last Name -->
                                 <div class="form-group">
                                     <label for="lastName">Last Name *</label>
                                     <input type="text" id="lastName" name="lastName" value="Maker" required>
                                 </div>
                             </div>
 
+                            <!-- Username Field with Validation Icon -->
                             <div class="form-group">
                                 <label for="username">Username *</label>
                                 <div class="input-with-check">
@@ -105,9 +147,10 @@
                                         <i class="fas fa-check"></i>
                                     </span>
                                 </div>
-                                <p class="helper-text">This is your unique identifier on Bambu Lab</p>
+                                <p class="helper-text">This is your unique identifier on Crafter-3D</p>
                             </div>
 
+                            <!-- Display Name -->
                             <div class="form-group">
                                 <label for="displayName">Display Name</label>
                                 <input type="text" id="displayName" name="displayName" value="John The Maker">
@@ -115,41 +158,45 @@
                             </div>
                         </div>
 
+                        <!-- ===== Contact Information Section ===== -->
                         <div class="form-section">
                             <h3>Contact Information</h3>
+
+                            <!-- Email Field -->
                             <div class="form-group">
                                 <label for="email">Email Address *</label>
                                 <div class="input-with-actions">
                                     <input type="email" id="email" name="email" value="john.maker@example.com" required>
                                     <div class="input-actions">
+                                        <!-- Verified Badge -->
                                         <span class="verified-badge">
                                             <i class="fas fa-check-circle"></i>
                                             Verified
                                         </span>
-                                        <button type="button" class="btn-text" id="changeEmail">
-                                            Change
-                                        </button>
+                                        <!-- Change Email Button -->
+                                        <button type="button" class="btn-text" id="changeEmail">Change</button>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- Phone Field -->
                             <div class="form-group">
                                 <label for="phone">Phone Number</label>
                                 <div class="input-with-actions">
                                     <input type="tel" id="phone" name="phone" value="+1 (555) 123-4567">
                                     <div class="input-actions">
-                                        <button type="button" class="btn-text" id="verifyPhone">
-                                            Verify
-                                        </button>
+                                        <button type="button" class="btn-text" id="verifyPhone">Verify</button>
                                     </div>
                                 </div>
                             </div>
 
+                            <!-- Location -->
                             <div class="form-group">
                                 <label for="location">Location</label>
                                 <input type="text" id="location" name="location" value="San Francisco, CA">
                             </div>
 
+                            <!-- Timezone Dropdown -->
                             <div class="form-group">
                                 <label for="timezone">Timezone</label>
                                 <select id="timezone" name="timezone">
@@ -162,125 +209,52 @@
                             </div>
                         </div>
 
+                        <!-- ===== About Me Section ===== -->
                         <div class="form-section">
                             <h3>About Me</h3>
+
+                            <!-- Bio Textarea with Character Counter -->
                             <div class="form-group">
                                 <label for="bio">Bio</label>
-                                <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself and your 3D printing interests...">Creating amazing things one layer at a time. Passionate about functional prints and detailed miniatures. Love experimenting with different materials and pushing the limits of what's possible with 3D printing.</textarea>
+                                <textarea id="bio" name="bio" rows="4" placeholder="Tell us about yourself...">
+Creating amazing things one layer at a time. Passionate about functional prints and detailed miniatures.
+                                </textarea>
                                 <div class="char-counter">
                                     <span id="bioCharCount">156</span>/500 characters
                                 </div>
                             </div>
 
+                            <!-- Personal Website -->
                             <div class="form-group">
                                 <label for="website">Website</label>
                                 <input type="url" id="website" name="website" placeholder="https://yourwebsite.com">
                             </div>
-
-                            <!-- <div class="form-group">
-                                <label for="socialLinks">Social Links</label>
-                                <div class="social-links-input">
-                                    <div class="social-link-item">
-                                        <select class="social-platform">
-                                            <option value="github">GitHub</option>
-                                            <option value="twitter">Twitter</option>
-                                            <option value="instagram">Instagram</option>
-                                            <option value="linkedin">LinkedIn</option>
-                                            <option value="youtube">YouTube</option>
-                                        </select>
-                                        <input type="text" placeholder="username" class="social-username">
-                                        <button type="button" class="btn-icon remove-social">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                    </div>
-                                    <button type="button" class="btn-text add-social-link">
-                                        <i class="fas fa-plus"></i>
-                                        Add Social Link
-                                    </button>
-                                </div>
-                            </div> -->
                         </div>
 
-                        <!-- <div class="form-section">
-                            <h3>Professional Information</h3>
-                            <div class="form-group">
-                                <label for="occupation">Occupation</label>
-                                <input type="text" id="occupation" name="occupation" value="3D Printing Specialist">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="company">Company/Organization</label>
-                                <input type="text" id="company" name="company" value="Maker Studios Inc.">
-                            </div>
-
-                            <div class="form-group">
-                                <label for="experience">3D Printing Experience</label>
-                                <select id="experience" name="experience">
-                                    <option value="beginner">Beginner (0-1 year)</option>
-                                    <option value="intermediate">Intermediate (1-3 years)</option>
-                                    <option value="advanced" selected>Advanced (3-5 years)</option>
-                                    <option value="expert">Expert (5+ years)</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group">
-                                <label>Printing Interests</label>
-                                <div class="interests-grid">
-                                    <label class="interest-checkbox">
-                                        <input type="checkbox" name="interests" value="functional" checked>
-                                        <span class="checkmark"></span>
-                                        Functional Parts
-                                    </label>
-                                    <label class="interest-checkbox">
-                                        <input type="checkbox" name="interests" value="art" checked>
-                                        <span class="checkmark"></span>
-                                        Art & Sculptures
-                                    </label>
-                                    <label class="interest-checkbox">
-                                        <input type="checkbox" name="interests" value="prototyping">
-                                        <span class="checkmark"></span>
-                                        Prototyping
-                                    </label>
-                                    <label class="interest-checkbox">
-                                        <input type="checkbox" name="interests" value="miniatures" checked>
-                                        <span class="checkmark"></span>
-                                        Miniatures
-                                    </label>
-                                    <label class="interest-checkbox">
-                                        <input type="checkbox" name="interests" value="cosplay">
-                                        <span class="checkmark"></span>
-                                        Cosplay Props
-                                    </label>
-                                    <label class="interest-checkbox">
-                                        <input type="checkbox" name="interests" value="education">
-                                        <span class="checkmark"></span>
-                                        Education
-                                    </label>
-                                </div>
-                            </div>
-                        </div> -->
-
+                        <!-- ===== FORM ACTION BUTTONS ===== -->
                         <div class="form-actions">
-                            <button type="button" class="btn btn-secondary" id="cancelChanges">
-                                Cancel
-                            </button>
+                            <button type="button" class="btn btn-secondary" id="cancelChanges">Cancel</button>
                             <button type="submit" class="btn btn-primary" id="saveChanges">
-                                <i class="fas fa-save"></i>
-                                Save Changes
+                                <i class="fas fa-save"></i> Save Changes
                             </button>
                         </div>
                     </form>
                 </div>
             </section>
 
-            <!-- Security Section -->
+            <!-- =======================================================
+                 SECTION: Security Settings
+                 ======================================================= -->
             <section id="security" class="info-section">
                 <div class="section-header">
                     <h1>Security Settings</h1>
                     <p>Manage your password and account security</p>
                 </div>
 
+                <!-- All security-related settings (password, 2FA, sessions) -->
                 <div class="security-content">
+
+                    <!-- Change Password Card -->
                     <div class="security-card">
                         <div class="security-header">
                             <i class="fas fa-key"></i>
@@ -289,11 +263,10 @@
                                 <p>Last changed 3 months ago</p>
                             </div>
                         </div>
-                        <button class="btn btn-outline" id="changePassword">
-                            Change Password
-                        </button>
+                        <button class="btn btn-outline" id="changePassword">Change Password</button>
                     </div>
 
+                    <!-- Two-Factor Authentication -->
                     <div class="security-card">
                         <div class="security-header">
                             <i class="fas fa-mobile-alt"></i>
@@ -304,12 +277,11 @@
                         </div>
                         <div class="security-status">
                             <span class="status-badge disabled">Disabled</span>
-                            <button class="btn btn-primary" id="enable2FA">
-                                Enable 2FA
-                            </button>
+                            <button class="btn btn-primary" id="enable2FA">Enable 2FA</button>
                         </div>
                     </div>
 
+                    <!-- Active Sessions -->
                     <div class="security-card">
                         <div class="security-header">
                             <i class="fas fa-desktop"></i>
@@ -329,6 +301,8 @@
                                 </div>
                                 <span class="session-time">Now</span>
                             </div>
+
+                            <!-- Example of another logged-in session -->
                             <div class="session-item">
                                 <div class="session-info">
                                     <i class="fas fa-mobile-alt"></i>
@@ -345,6 +319,7 @@
                         </div>
                     </div>
 
+                    <!-- Danger Zone -->
                     <div class="security-card danger">
                         <div class="security-header">
                             <i class="fas fa-exclamation-triangle"></i>
@@ -353,14 +328,14 @@
                                 <p>Permanently delete your account and all data</p>
                             </div>
                         </div>
-                        <button class="btn btn-danger" id="deleteAccount">
-                            Delete Account
-                        </button>
+                        <button class="btn btn-danger" id="deleteAccount">Delete Account</button>
                     </div>
                 </div>
             </section>
 
-            <!-- Privacy Section -->
+            <!-- =======================================================
+                 SECTION: Privacy Settings
+                 ======================================================= -->
             <section id="privacy" class="info-section">
                 <div class="section-header">
                     <h1>Privacy Settings</h1>
@@ -368,6 +343,8 @@
                 </div>
 
                 <div class="privacy-content">
+
+                    <!-- Profile Visibility Card -->
                     <div class="privacy-card">
                         <h3>Profile Visibility</h3>
                         <div class="privacy-option">
@@ -382,12 +359,13 @@
                         </div>
                     </div>
 
+                    <!-- Data Sharing Options -->
                     <div class="privacy-card">
                         <h3>Data Sharing</h3>
                         <div class="privacy-option">
                             <div class="option-info">
                                 <strong>Usage Analytics</strong>
-                                <p>Help improve Bambu Lab by sharing anonymous usage data</p>
+                                <p>Help improve Crafter-3D by sharing anonymous usage data</p>
                             </div>
                             <label class="toggle-switch">
                                 <input type="checkbox" checked>
@@ -406,6 +384,7 @@
                         </div>
                     </div>
 
+                    <!-- Communication Preferences -->
                     <div class="privacy-card">
                         <h3>Communication Preferences</h3>
                         <div class="privacy-option">
@@ -434,7 +413,9 @@
         </main>
     </div>
 
-    <!-- Change Password Modal -->
+    <!-- =======================================================
+         CHANGE PASSWORD MODAL (Popup)
+         ======================================================= -->
     <div class="modal" id="passwordModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -443,11 +424,16 @@
                     <i class="fas fa-times"></i>
                 </button>
             </div>
+
+            <!-- Password Change Form -->
             <form class="password-form" id="passwordForm">
+                <!-- Current Password -->
                 <div class="form-group">
                     <label for="currentPassword">Current Password</label>
                     <input type="password" id="currentPassword" required>
                 </div>
+
+                <!-- New Password with Strength Meter -->
                 <div class="form-group">
                     <label for="newPassword">New Password</label>
                     <input type="password" id="newPassword" required>
@@ -458,22 +444,24 @@
                         <span class="strength-text" id="strengthText">Weak</span>
                     </div>
                 </div>
+
+                <!-- Confirm New Password -->
                 <div class="form-group">
                     <label for="confirmPassword">Confirm New Password</label>
                     <input type="password" id="confirmPassword" required>
                 </div>
+
+                <!-- Modal Footer Buttons -->
                 <div class="modal-actions">
-                    <button type="button" class="btn btn-secondary" id="cancelPassword">
-                        Cancel
-                    </button>
-                    <button type="submit" class="btn btn-primary">
-                        Update Password
-                    </button>
+                    <button type="button" class="btn btn-secondary" id="cancelPassword">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Update Password</button>
                 </div>
             </form>
         </div>
     </div>
 
+    <!-- ========== PAGE SCRIPTS ========== -->
+    <!-- In Laravel: <script src="{{ asset('js-assets/user-personal-Info.js') }}"></script> -->
     <script src="../js-assets/user-personal-Info.js"></script>
 </body>
 </html>

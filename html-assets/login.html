@@ -1,82 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Basic Meta Setup -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+    <!-- CSS File Link -->
+    <!-- External CSS file for login page design -->
     <link rel="stylesheet" href="../css-assets/login.css">
+
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Main Login Container -->
     <div class="login-container">
-        <!-- Left Side - Brand/Image -->
+
+        <!-- ================= LEFT SIDE ================= -->
+        <!-- This section can be used to show brand, info, or illustration -->
         <div class="login-left">
             <div class="brand-section">
+
+                <!-- Company logo and name -->
                 <div class="logo">
-                    <i class="fas fa-print"></i>
-                    <h1>Bambu Lab</h1>
+                    <!-- <i class="fas fa-print"></i> -->
+                     <img class="logo-img" src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816616/logo-dark_a9xj8w.png" alt="">
+                    <h1>Crafter-3d</h1>
                 </div>
+
+                <!-- Welcome message and short description -->
                 <div class="brand-content">
                     <h2>Welcome Back</h2>
-                    <p>Sign in to your Bambu Lab account to access your 3D printing projects, models, and community features.</p>
+                    <p>Sign in to your Crafter-3d account to access your 3D printing projects, models, and community features.</p>
                 </div>
+
+                <!-- Optional illustration image -->
                 <div class="features">
-
-                    <img class="login-img" src="./images/login.png" alt="">
-
-                    <!-- <div class="feature">
-                        <i class="fas fa-cloud"></i>
-                        <span>Cloud Printing</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-shapes"></i>
-                        <span>Model Library</span>
-                    </div>
-                    <div class="feature">
-                        <i class="fas fa-users"></i>
-                        <span>Community</span>
-                    </div> -->
+                    <img class="login-img" src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759821230/login_zwqppo.png" alt="">
                 </div>
             </div>
         </div>
 
-        <!-- Right Side - Login Form -->
+        <!-- ================= RIGHT SIDE ================= -->
+        <!-- This section contains the actual login form -->
         <div class="login-right">
             <div class="login-form-container">
+
+                <!-- Form Header Section -->
                 <div class="form-header">
                     <h2>Sign In</h2>
                     <p>Enter your credentials to continue</p>
                 </div>
 
+                <!-- ================= LOGIN FORM ================= -->
+                <!-- Laravel integration note:
+                     - Replace `action="#"` with `action="{{ route('login') }}"`
+                     - Use `@csrf` inside the form for CSRF protection -->
                 <form class="login-form" id="loginForm">
+                    
+                    <!-- Email Input -->
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <div class="input-group">
                             <i class="fas fa-envelope"></i>
+                            <!-- Laravel integration:
+                                 name="email" works directly with Laravel Auth -->
                             <input type="email" id="email" name="email" placeholder="Enter your email" required>
                         </div>
                     </div>
 
+                    <!-- Password Input -->
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div class="input-group">
                             <i class="fas fa-lock"></i>
+                            <!-- Laravel integration:
+                                 name="password" matches default Auth password field -->
                             <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+                            <!-- Password toggle button (JS handled) -->
                             <button type="button" class="password-toggle" id="passwordToggle">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </div>
                     </div>
 
+                    <!-- Remember Me and Forgot Password -->
                     <div class="form-options">
+                        <!-- Laravel integration:
+                             You can map rememberMe checkbox with Auth::attempt($credentials, true) -->
                         <label class="no-copy-text checkbox-container">
                             <input type="checkbox" id="rememberMe">
                             <span class="checkmark"></span>
                             Remember me
                         </label>
+
+                        <!-- Forgot Password Page -->
+                        <!-- Laravel integration:
+                             href="{{ route('password.request') }}" -->
                         <a href="../html-assets/forgot-password.html" class="no-copy-text forgot-password">Forgot password?</a>
                     </div>
 
+                    <!-- Submit Button -->
+                    <!-- Laravel integration:
+                         Make this form submit via POST to the login route -->
                     <button type="submit" class="login-btn">
                         <span class="btn-text">Sign In</span>
                         <div class="btn-loader">
@@ -84,21 +112,28 @@
                         </div>
                     </button>
 
+                    <!-- Divider for Social Login -->
                     <div class="divider">
                         <span>Or continue with</span>
                     </div>
 
+                    <!-- ================= SOCIAL LOGIN ================= -->
+                    <!-- These buttons can be linked with Laravel Socialite -->
                     <div class="social-login">
                         <button type="button" class="social-btn google-btn">
                             <i class="fab fa-google"></i>
                             Google
                         </button>
+
                         <button type="button" class="social-btn github-btn">
                             <i class="fab fa-github"></i>
                             GitHub
                         </button>
                     </div>
 
+                    <!-- Signup Link -->
+                    <!-- Laravel integration:
+                         href="{{ route('register') }}" -->
                     <div class="signup-link">
                         Don't have an account? <a href="sign-up.html">Sign up now</a>
                     </div>
@@ -107,6 +142,7 @@
         </div>
     </div>
 
+    <!-- External JS file for password toggle, form validation, etc. -->
     <script src="../js-assets/login.js"></script>
 </body>
 </html>

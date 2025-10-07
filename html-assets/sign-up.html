@@ -1,71 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Basic Meta Setup -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - Bambu Lab</title>
+
+    <!-- External CSS File for Sign-Up Page -->
     <link rel="stylesheet" href="../css-assets/sign-up.css">
+
+    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
+    <!-- Main Signup Page Container -->
     <div class="signup-container">
-        <!-- Left Side - Brand/Image -->
+
+        <!-- ================= LEFT SIDE ================= -->
+        <!-- This part is only for branding, description, and visuals -->
         <div class="signup-left">
             <div class="brand-section">
+
+                <!-- Logo Section -->
                 <div class="logo">
-                    <i class="fas fa-print"></i>
-                    <h1>Bambu Lab</h1>
+                    <!-- You can dynamically load logo via Laravel asset() helper -->
+                    <!-- Example: <img class="logo-img" src="{{ asset('images/logo-dark.png') }}" alt=""> -->
+                    <img class="logo-img"
+                        src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816616/logo-dark_a9xj8w.png" alt="">
+                    <h1>Crafter-3d</h1>
                 </div>
+
+                <!-- Small Welcome Text -->
                 <div class="brand-content">
                     <h2>Join Our Community</h2>
-                    <p>Create your Bambu Lab account to unlock the full potential of 3D printing with cloud features, model sharing, and exclusive content.</p>
+                    <p>Create your Crafter-3d account to unlock the full potential of 3D printing with cloud features,
+                        model sharing, and exclusive content.</p>
                 </div>
+
+                <!-- Illustration Image -->
                 <div class="benefits">
-
-                    <img src="./images/signup.png" alt="">
-
-                    <!-- <div class="benefit">
-                        <i class="fas fa-rocket"></i>
-                        <div>
-                            <h4>Fast Setup</h4>
-                            <p>Get started in minutes with pre-configured profiles</p>
-                        </div>
-                    </div>
-                    <div class="benefit">
-                        <i class="fas fa-cloud-upload-alt"></i>
-                        <div>
-                            <h4>Cloud Storage</h4>
-                            <p>Access your projects from anywhere</p>
-                        </div>
-                    </div>
-                    <div class="benefit">
-                        <i class="fas fa-shield-alt"></i>
-                        <div>
-                            <h4>Secure & Private</h4>
-                            <p>Your data is protected with enterprise-grade security</p>
-                        </div>
-                    </div> -->
+                    <img src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759822030/signup-removebg-preview_uzqmfg.png" alt="">
                 </div>
             </div>
         </div>
 
-        <!-- Right Side - Sign Up Form -->
+        <!-- ================= RIGHT SIDE ================= -->
+        <!-- This is where the actual registration form lives -->
         <div class="signup-right">
             <div class="signup-form-container">
+
+                <!-- Header Text for Sign-Up Form -->
                 <div class="form-header">
                     <h2>Create Account</h2>
                     <p>Join thousands of makers worldwide</p>
                 </div>
 
+                <!-- ================= SIGN-UP FORM ================= -->
+                <!-- Laravel Integration Tips:
+                     1️ Add method="POST" and action="{{ route('register') }}"
+                     2️ Include @csrf inside the form for CSRF protection
+                     3️ Match 'name' attributes with Laravel's default registration fields -->
                 <form class="signup-form" id="signupForm">
+                    
+                    <!-- ========== Name Fields ========== -->
                     <div class="name-fields">
+                        <!-- First Name -->
                         <div class="form-group">
                             <label for="firstName">First Name</label>
                             <div class="input-group">
                                 <i class="fas fa-user"></i>
-                                <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+                                <input type="text" id="firstName" name="firstName" placeholder="Enter first name"
+                                    required>
                             </div>
                         </div>
+
+                        <!-- Last Name -->
                         <div class="form-group">
                             <label for="lastName">Last Name</label>
                             <div class="input-group">
@@ -75,23 +86,30 @@
                         </div>
                     </div>
 
+                    <!-- ========== Email Field ========== -->
                     <div class="form-group">
                         <label for="email">Email Address</label>
                         <div class="input-group">
                             <i class="fas fa-envelope"></i>
+                            <!-- Laravel Auth expects 'email' field by default -->
                             <input type="email" id="email" name="email" placeholder="Enter your email" required>
                         </div>
                     </div>
 
+                    <!-- ========== Password Field ========== -->
                     <div class="form-group">
                         <label for="password">Password</label>
                         <div class="input-group">
                             <i class="fas fa-lock"></i>
-                            <input type="password" id="password" name="password" placeholder="Create a password" required>
+                            <!-- name="password" matches Laravel's default Auth password field -->
+                            <input type="password" id="password" name="password" placeholder="Create a password"
+                                required>
                             <button type="button" class="password-toggle">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </div>
+
+                        <!-- Optional password strength meter -->
                         <div class="password-strength">
                             <div class="strength-bar">
                                 <div class="strength-fill" id="strengthFill"></div>
@@ -100,17 +118,22 @@
                         </div>
                     </div>
 
+                    <!-- ========== Confirm Password Field ========== -->
+                    <!-- Laravel's default name for this field is 'password_confirmation' -->
                     <div class="form-group">
                         <label for="confirmPassword">Confirm Password</label>
                         <div class="input-group">
                             <i class="fas fa-lock"></i>
-                            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password" required>
+                            <input type="password" id="confirmPassword" name="password_confirmation"
+                                placeholder="Confirm your password" required>
                             <button type="button" class="password-toggle">
                                 <i class="fas fa-eye"></i>
                             </button>
                         </div>
                     </div>
 
+                    <!-- ========== Username Field (Custom) ========== -->
+                    <!-- You can add 'username' column in users table if using Laravel Breeze or Fortify -->
                     <div class="form-group">
                         <label for="username">Username</label>
                         <div class="input-group">
@@ -119,12 +142,10 @@
                         </div>
                     </div>
 
+                    <!-- ========== Terms & Conditions Checkbox ========== -->
                     <div class="form-options">
-                        <!-- <label class="checkbox-container">
-                            <input type="checkbox" id="newsletter" checked>
-                            <span class="checkmark"></span>
-                            Send me product updates and 3D printing tips
-                        </label> -->
+                        <!-- Laravel Integration:
+                             - Validate in controller: request()->validate(['terms' => 'accepted']); -->
                         <label class="checkbox-container">
                             <input type="checkbox" id="terms" required>
                             <span class="checkmark"></span>
@@ -132,6 +153,9 @@
                         </label>
                     </div>
 
+                    <!-- ========== Submit Button ========== -->
+                    <!-- Laravel Integration:
+                         Make sure form submission triggers RegisterController@store -->
                     <button type="submit" class="signup-btn">
                         <span class="btn-text">Create Account</span>
                         <div class="btn-loader">
@@ -139,10 +163,13 @@
                         </div>
                     </button>
 
+                    <!-- Divider -->
                     <div class="divider">
                         <span>Or sign up with</span>
                     </div>
 
+                    <!-- ========== Social Sign-Up Buttons ========== -->
+                    <!-- Can be connected to Laravel Socialite routes -->
                     <div class="social-signup">
                         <button type="button" class="social-btn google-btn">
                             <i class="fab fa-google"></i>
@@ -154,6 +181,9 @@
                         </button>
                     </div>
 
+                    <!-- ========== Already Have Account Link ========== -->
+                    <!-- Laravel Integration:
+                         href="{{ route('login') }}" -->
                     <div class="login-link">
                         Already have an account? <a href="login.html">Sign in now</a>
                     </div>
@@ -162,6 +192,8 @@
         </div>
     </div>
 
+    <!-- External JS file for password toggle and validation -->
     <script src="../js-assets/sign-up.js"></script>
 </body>
+
 </html>
