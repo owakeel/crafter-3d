@@ -4,73 +4,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Navbar</title>
-    <link rel="stylesheet" href="../css-assets/landingPage.css">
+    <title>crafter-3d</title>
+    <link rel="stylesheet" href="./css-assets/landingPage.css">
 </head>
 
 <body>
 
     <!-- Navbar Start -->
     <div class="container">
-       <nav class="navbar">
-        <div class="nav-wrapper">
-            <div>
-                <img class="logo-img" src="../images/logo.png" alt="Logo">
+        <nav class="navbar">
+            <div class="nav-wrapper">
+                <div>
+                    <img class="logo-img" src="./images/logo.png" alt="Logo">
+                </div>
+
+                <!-- Toggle Button -->
+                <button class="nav-toggle" aria-label="Toggle navigation">
+                    ☰
+                </button>
+
+                <!-- Nav Menu -->
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        Products ▾
+                        <div class="mega-menu">
+                            <div class="products-section">
+                                <h3 class="category-title">3D Printer Series</h3>
+                                <div class="products-grid">
+                                    <div class="product-card">
+                                        <div class="product-name">Bambu Lab H2 Series</div>
+                                        <div class="product-desc">Personal Manufacturing Hub with advanced features.
+                                        </div>
+                                        <span class="product-tag">NEW</span>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-name">Bambu Lab A1</div>
+                                        <div class="product-desc">Full-size Gateway 3D printer for beginners.</div>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-name">Bambu Lab AI mini</div>
+                                        <div class="product-desc">The Go-To Entry Level 3D Printer.</div>
+                                        <span class="product-tag">BEST VALUE</span>
+                                    </div>
+                                    <div class="product-card">
+                                        <div class="product-name">Bambu Lab P1</div>
+                                        <div class="product-desc">The Reliable Workhorse 3D Printer.</div>
+                                    </div>
+                                </div>
+                                <div class="cta-buttons">
+                                    <a href="#" class="btn btn-primary">Shop All Printers</a>
+                                    <a href="#" class="btn btn-secondary">Compare Models</a>
+                                </div>
+                            </div>
+                            <div class="promo-section">
+                                <h3 class="promo-title">Special Offer</h3>
+                                <p class="promo-text">Get 15% off on all 3D printers when you purchase with an AMS
+                                    system. Limited time offer!</p>
+                                <a href="#" class="promo-btn">Learn More</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">Filament</li>
+                    <li class="nav-item">Accessories</li>
+                    <li class="nav-item">Software</li>
+                    <li class="nav-item">MakerWorld</li>
+                    <li class="nav-item">Explore</li>
+                    <li class="nav-item">Support</li>
+                </ul>
             </div>
-
-            <!-- Toggle Button -->
-            <button class="nav-toggle" aria-label="Toggle navigation">
-                ☰
-            </button>
-
-            <!-- Nav Menu -->
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    Products ▾
-                    <div class="mega-menu">
-                        <div class="products-section">
-                            <h3 class="category-title">3D Printer Series</h3>
-                            <div class="products-grid">
-                                <div class="product-card">
-                                    <div class="product-name">Bambu Lab H2 Series</div>
-                                    <div class="product-desc">Personal Manufacturing Hub with advanced features.</div>
-                                    <span class="product-tag">NEW</span>
-                                </div>
-                                <div class="product-card">
-                                    <div class="product-name">Bambu Lab A1</div>
-                                    <div class="product-desc">Full-size Gateway 3D printer for beginners.</div>
-                                </div>
-                                <div class="product-card">
-                                    <div class="product-name">Bambu Lab AI mini</div>
-                                    <div class="product-desc">The Go-To Entry Level 3D Printer.</div>
-                                    <span class="product-tag">BEST VALUE</span>
-                                </div>
-                                <div class="product-card">
-                                    <div class="product-name">Bambu Lab P1</div>
-                                    <div class="product-desc">The Reliable Workhorse 3D Printer.</div>
-                                </div>
-                            </div>
-                            <div class="cta-buttons">
-                                <a href="#" class="btn btn-primary">Shop All Printers</a>
-                                <a href="#" class="btn btn-secondary">Compare Models</a>
-                            </div>
-                        </div>
-                        <div class="promo-section">
-                            <h3 class="promo-title">Special Offer</h3>
-                            <p class="promo-text">Get 15% off on all 3D printers when you purchase with an AMS system. Limited time offer!</p>
-                            <a href="#" class="promo-btn">Learn More</a>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">Filament</li>
-                <li class="nav-item">Accessories</li>
-                <li class="nav-item">Software</li>
-                <li class="nav-item">MakerWorld</li>
-                <li class="nav-item">Explore</li>
-                <li class="nav-item">Support</li>
-            </ul>
-        </div>
-    </nav>
+        </nav>
     </div>
     <!-- Navbar End -->
 
@@ -146,7 +148,7 @@
 
     <!-- Powerful Tools Section -->
     <section class="tools-section">
-        <div class="">
+        <div class="container">
             <div class="section-header">
                 <h2>What You Can Do with 3D Printing</h2>
             </div>
@@ -174,11 +176,11 @@
                 <div class="tool-card">
                     <div class="tool-container">
                         <div class="tool-text">
-                            <span class="tool-tag">3D Printers</span>
-                            <h3>Powerful Tools for Makers</h3>
+                            <span class="tool-tag">Materials</span>
+                            <h3>High-Quality Filaments</h3>
                             <div class="tool-links">
-                                <a href="#" class="tool-link">Buy now ›</a>
-                                <a href="#" class="tool-link">Compare all ›</a>
+                                <a href="#" class="tool-link">Shop filaments ›</a>
+                                <a href="#" class="tool-link">Learn more ›</a>
                             </div>
                         </div>
                         <div class="tool-img">
@@ -191,11 +193,11 @@
                 <div class="tool-card">
                     <div class="tool-container">
                         <div class="tool-text">
-                            <span class="tool-tag">3D Printers</span>
-                            <h3>Powerful Tools for Makers</h3>
+                            <span class="tool-tag">Accessories</span>
+                            <h3>Enhance Your Printing Experience</h3>
                             <div class="tool-links">
-                                <a href="#" class="tool-link">Buy now ›</a>
-                                <a href="#" class="tool-link">Compare all ›</a>
+                                <a href="#" class="tool-link">Explore tools ›</a>
+                                <a href="#" class="tool-link">Find parts ›</a>
                             </div>
                         </div>
                         <div class="tool-img">
@@ -208,11 +210,11 @@
                 <div class="tool-card">
                     <div class="tool-container">
                         <div class="tool-text">
-                            <span class="tool-tag">3D Printers</span>
-                            <h3>Powerful Tools for Makers</h3>
+                            <span class="tool-tag">Software</span>
+                            <h3>Smart Control for Seamless Printing</h3>
                             <div class="tool-links">
-                                <a href="#" class="tool-link">Buy now ›</a>
-                                <a href="#" class="tool-link">Compare all ›</a>
+                                <a href="#" class="tool-link">Download ›</a>
+                                <a href="#" class="tool-link">Discover features ›</a>
                             </div>
                         </div>
                         <div class="tool-img">
@@ -227,7 +229,7 @@
 
     <!-- What You Can Do Section -->
     <section class="uses-section">
-        <div class="uses-container">
+        <div class="container">
             <div class="section-header">
                 <h2>What You Can Do with 3D Printing</h2>
             </div>
@@ -238,8 +240,8 @@
                     <div class="use-content">
                         <div class="use-card-text-continer">
                             <div>
-                                <h3>Hobby & DIY</h3>
-                                <p>Enjoy your hobby more with custom parts and design!</p>
+                                <h3>Art & Design</h3>
+                                <p>Turn imagination into reality with detailed artistic creations.</p>
                             </div>
                             <div class="img-continer">
                                 <img class="use-card-text-img" src="../images/arrow.png" alt="">
@@ -257,7 +259,7 @@
                                 <p>Enjoy your hobby more with custom parts and design!</p>
                             </div>
                             <div class="img-continer">
-                                <img class="use-card-text-img" src="../images/arrow.png" alt="">
+                                <img class="use-card-text-img" src="./images/arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -268,11 +270,11 @@
                     <div class="use-content">
                         <div class="use-card-text-continer">
                             <div>
-                                <h3>Hobby & DIY</h3>
-                                <p>Enjoy your hobby more with custom parts and design!</p>
+                                <h3>Education & Learning</h3>
+                                <p>Make learning interactive with creative 3D-printed projects.</p>
                             </div>
                             <div class="img-continer">
-                                <img class="use-card-text-img" src="../images/arrow.png" alt="">
+                                <img class="use-card-text-img" src="./images/arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -283,11 +285,11 @@
                     <div class="use-content">
                         <div class="use-card-text-continer">
                             <div>
-                                <h3>Hobby & DIY</h3>
-                                <p>Enjoy your hobby more with custom parts and design!</p>
+                                <h3>Prototyping & Engineering</h3>
+                                <p>Bring your innovative ideas to life with precision 3D printing.</p>
                             </div>
                             <div class="img-continer">
-                                <img class="use-card-text-img" src="../images/arrow.png" alt="">
+                                <img class="use-card-text-img" src="./images/arrow.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -297,6 +299,7 @@
     </section>
 
 
+
     <!-- Learn 3D Printing Section -->
     <section class="learn-section">
         <div class="container">
@@ -304,20 +307,58 @@
                 <h1 class="learn-header-text">New to 3D Printing? <br> This Is the Place to Start</h1>
             </div>
             <div class="learn-grid">
-                <div class="learn-main-card" style="background-image: url('../images/1.jpg');">
+                <div class="learn-main-card" style="background-image: url('./images/3.jpg');">
                     <h3 class="learn-header-text">Learn 3D Printing Basics from Zero to Hero</h3>
                     <a class="text-link" href="#">Learn more ></a>
                 </div>
-                <div class="learn-main-card" style="background-image: url('../images/2.jpg');">
+                <div class="learn-main-card" style="background-image: url('./images/2.jpg');">
                     <h3 class="learn-header-text">Free Premium Models</h3>
                     <a class="text-link" href="#">Explore ></a>
                 </div>
-                <div class="learn-main-card" style="background-image: url('../images/3.jpg');">
+                <div class="learn-main-card" style="background-image: url('./images/1.jpg');">
                     <h3 class="learn-header-text">Choose the Correct Filaments for Your Projects</h3>
                     <a class="text-link" href="#">Learn more ></a>
                 </div>
 
             </div>
+        </div>
+    </section>
+
+
+    <!-- video-section -->
+    <section class="video-section">
+        <h2>Check Out What the Pros Are Saying</h2>
+
+        <div class="slider-container">
+            <button class="nav-btn prev-btn">&#10094;</button>
+
+            <div class="video-slider">
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/qvRz4uP1f7c" title="Bambu Lab A1 Combo Review"
+                        allowfullscreen></iframe>
+                    <p>Bambu Lab A1 Combo | 2024 Review</p>
+                </div>
+
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/KpM3fD4Vb24" title="Bambu Lab X1C Review"
+                        allowfullscreen></iframe>
+                    <p>Bambu Lab X1C | Speed at What Cost?</p>
+                </div>
+
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/4A5Q_GvQ1dY" title="Bambu P1P Review"
+                        allowfullscreen></iframe>
+                    <p>The BEST 3D Printer I’ve Ever Used?</p>
+                </div>
+
+                <div class="video-card">
+                    <iframe src="https://www.youtube.com/embed/Z0kuZbLkG1Q" title="3D Printing Gadgets"
+                        allowfullscreen></iframe>
+                    <p>Top Gadgets Tested on Bambu Lab Printer</p>
+                </div>
+            </div>
+
+            <button class="nav-btn next-btn">&#10095;</button>
         </div>
     </section>
 
@@ -331,59 +372,43 @@
             <div class="reviews-grid">
                 <!-- left side -->
                 <div class="review-left-card">
-                    <img class="review-img" src="../images/review-img.jpeg" alt="">
+                    <img class="review-img" src="./images/IMG_8110.JPG" alt="">
                 </div>
 
                 <!-- right side -->
                 <div class="review-right-card">
                     <div class="text-continer">
-                        <h3>AlL3DP</h3>
-                        <h4>Bambu Lab X1 Carbon Review: Fresh
-                            Thinking, No Tinkerin*</h4>
-                        <p>This is a highly refined, technologically advanced
-                            3D printer that provides one of the very best
-                            foundations to build a printing experience upon.
-                            The hardware and software combine brilliantly to
-                            provide users with a compelling, premium 3D
-                            printing experie</p>
+                        <h3>All3DP</h3>
+                        <h4>Bambu Lab X1 Carbon Review: Fresh Thinking, No Tinkering Needed</h4>
+                        <p>The X1 Carbon offers incredible speed, precision, and ease of use,
+                            making it perfect for both professionals and hobbyists who want high-quality prints
+                            without complex setup.</p>
                     </div>
-                    <div class="text-continer">
-                         <h3>AlL3DP</h3>
-                        <h4>Bambu Lab X1 Carbon Review: Fresh
-                            Thinking, No Tinkerin*</h4>
-                        <p>This is a highly refined, technologically advanced
-                            3D printer that provides one of the very best
-                            foundations to build a printing experience upon.
-                            The hardware and software combine brilliantly to
-                            provide users with a compelling, premium 3D
-                            printing experie</p>
-                    </div>
-                    <div class="text-continer">
-                         <h3>AlL3DP</h3>
-                        <h4>Bambu Lab X1 Carbon Review: Fresh
-                            Thinking, No Tinkerin*</h4>
-                        <p>This is a highly refined, technologically advanced
-                            3D printer that provides one of the very best
-                            foundations to build a printing experience upon.
-                            The hardware and software combine brilliantly to
-                            provide users with a compelling, premium 3D
-                            printing experie</p>
-                    </div>
-                    <div class="text-continer">
-                         <h3>AlL3DP</h3>
-                        <h4>Bambu Lab X1 Carbon Review: Fresh
-                            Thinking, No Tinkerin*</h4>
-                        <p>This is a highly refined, technologically advanced
-                            3D printer that provides one of the very best
-                            foundations to build a printing experience upon.
-                            The hardware and software combine brilliantly to
-                            provide users with a compelling, premium 3D
-                            printing experie</p>
-                    </div>
-                </div>
-            </div>
 
-        </div>
+                    <div class="text-continer">
+                        <h3>Tom’s Hardware</h3>
+                        <h4>A 3D Printer That Redefines Efficiency</h4>
+                        <p>Bambu Lab’s engineering brilliance shines through with seamless automation,
+                            intelligent calibration, and consistent performance that saves both time and material.</p>
+                    </div>
+
+                    <div class="text-continer">
+                        <h3>TechRadar</h3>
+                        <h4>High-End Printing for the Modern Creator</h4>
+                        <p>Combining sleek design with smart functionality, the X1 Carbon sets a new standard
+                            for user-friendly, premium 3D printing experiences across industries.</p>
+                    </div>
+
+                    <div class="text-continer">
+                        <h3>MakeUseOf</h3>
+                        <h4>Precision Meets Innovation</h4>
+                        <p>From quiet operation to flawless print quality, the X1 Carbon delivers a professional-grade
+                            experience that pushes the boundaries of desktop 3D printing.</p>
+                    </div>
+
+                </div>
+
+            </div>
     </section>
 
     <!-- FAQ Section -->
@@ -585,7 +610,7 @@
         </div>
     </footer>
 
-    <script src="../js-assets/landingPage.js"></script>
+    <script src="./js-assets/landingPage.js"></script>
 </body>
 
 </html>

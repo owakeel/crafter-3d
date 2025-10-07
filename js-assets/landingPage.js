@@ -1,6 +1,6 @@
 
- // Navbar Script
- document.addEventListener('DOMContentLoaded', function () {
+// Navbar Script
+document.addEventListener('DOMContentLoaded', function () {
     const navItems = document.querySelectorAll('.nav-item');
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
@@ -45,176 +45,99 @@
 
 
 // Carousel Script
-        document.addEventListener('DOMContentLoaded', function () {
-            const carouselInner = document.querySelector('.carousel-inner');
-            const carouselItems = document.querySelectorAll('.carousel-item');
-            const prevButton = document.querySelector('.carousel-control.prev');
-            const nextButton = document.querySelector('.carousel-control.next');
-            const indicators = document.querySelectorAll('.indicator');
+document.addEventListener('DOMContentLoaded', function () {
+    const carouselInner = document.querySelector('.carousel-inner');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const prevButton = document.querySelector('.carousel-control.prev');
+    const nextButton = document.querySelector('.carousel-control.next');
+    const indicators = document.querySelectorAll('.indicator');
 
-            let currentSlide = 0;
-            const totalSlides = carouselItems.length;
+    let currentSlide = 0;
+    const totalSlides = carouselItems.length;
 
-            function showSlide(index) {
-                carouselItems.forEach(item => item.classList.remove('active'));
-                indicators.forEach(indicator => indicator.classList.remove('active'));
+    function showSlide(index) {
+        carouselItems.forEach(item => item.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
 
-                carouselItems[index].classList.add('active');
-                indicators[index].classList.add('active');
-                currentSlide = index;
-            }
+        carouselItems[index].classList.add('active');
+        indicators[index].classList.add('active');
+        currentSlide = index;
+    }
 
-            function nextSlide() {
-                let nextIndex = (currentSlide + 1) % totalSlides;
-                showSlide(nextIndex);
-            }
+    function nextSlide() {
+        let nextIndex = (currentSlide + 1) % totalSlides;
+        showSlide(nextIndex);
+    }
 
-            function prevSlide() {
-                let prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
-                showSlide(prevIndex);
-            }
+    function prevSlide() {
+        let prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(prevIndex);
+    }
 
-            let slideInterval = setInterval(nextSlide, 5000);
+    let slideInterval = setInterval(nextSlide, 5000);
 
-            prevButton.addEventListener('click', () => {
-                prevSlide();
-                resetInterval();
-            });
+    prevButton.addEventListener('click', () => {
+        prevSlide();
+        resetInterval();
+    });
 
-            nextButton.addEventListener('click', () => {
-                nextSlide();
-                resetInterval();
-            });
+    nextButton.addEventListener('click', () => {
+        nextSlide();
+        resetInterval();
+    });
 
-            indicators.forEach((indicator, index) => {
-                indicator.addEventListener('click', () => {
-                    showSlide(index);
-                    resetInterval();
-                });
-            });
-
-            function resetInterval() {
-                clearInterval(slideInterval);
-                slideInterval = setInterval(nextSlide, 5000);
-            }
-
-            // Pause on hover
-            carouselInner.addEventListener('mouseenter', () => clearInterval(slideInterval));
-            carouselInner.addEventListener('mouseleave', resetInterval);
-
-            // Keyboard control
-            document.addEventListener('keydown', function (e) {
-                if (e.key === 'ArrowLeft') { prevSlide(); resetInterval(); }
-                else if (e.key === 'ArrowRight') { nextSlide(); resetInterval(); }
-            });
-
-            // Touch swipe
-            let touchStartX = 0, touchEndX = 0;
-            carouselInner.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
-            carouselInner.addEventListener('touchend', e => {
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            });
-
-            function handleSwipe() {
-                const swipeThreshold = 50;
-                if (touchEndX < touchStartX - swipeThreshold) { nextSlide(); resetInterval(); }
-                else if (touchEndX > touchStartX + swipeThreshold) { prevSlide(); resetInterval(); }
-            }
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
+            resetInterval();
         });
+    });
+
+    function resetInterval() {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 5000);
+    }
+
+    // Pause on hover
+    carouselInner.addEventListener('mouseenter', () => clearInterval(slideInterval));
+    carouselInner.addEventListener('mouseleave', resetInterval);
+
+    // Keyboard control
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowLeft') { prevSlide(); resetInterval(); }
+        else if (e.key === 'ArrowRight') { nextSlide(); resetInterval(); }
+    });
+
+    // Touch swipe
+    let touchStartX = 0, touchEndX = 0;
+    carouselInner.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
+    carouselInner.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const swipeThreshold = 50;
+        if (touchEndX < touchStartX - swipeThreshold) { nextSlide(); resetInterval(); }
+        else if (touchEndX > touchStartX + swipeThreshold) { prevSlide(); resetInterval(); }
+    }
+});
 
 
-// Tools Section functionality
-// document.addEventListener('DOMContentLoaded', function () {
-//     // Add intersection observer for animation
-//     const toolCards = document.querySelectorAll('.tool-card');
 
-//     const observerOptions = {
-//         threshold: 0.1,
-//         rootMargin: '0px 0px -50px 0px'
-//     };
+const slider = document.querySelector('.video-slider');
+const prevBtn = document.querySelector('.prev-btn');
+const nextBtn = document.querySelector('.next-btn');
 
-//     const observer = new IntersectionObserver(function (entries) {
-//         entries.forEach(entry => {
-//             if (entry.isIntersecting) {
-//                 entry.target.style.opacity = '1';
-//                 entry.target.style.transform = 'translateY(0)';
-//             }
-//         });
-//     }, observerOptions);
+const scrollStep = 350;
 
-//     // Reset animations for observer
-//     toolCards.forEach(card => {
-//         card.style.opacity = '0';
-//         card.style.transform = 'translateY(30px)';
-//         card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-//         observer.observe(card);
-//     });
+nextBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: scrollStep, behavior: 'smooth' });
+});
 
-//     // Add click handlers for tool cards
-//     toolCards.forEach(card => {
-//         card.addEventListener('click', function (e) {
-//             if (!e.target.closest('.tool-link')) {
-//                 const link = this.querySelector('.tool-link');
-//                 if (link) {
-//                     // Add ripple effect
-//                     const ripple = document.createElement('span');
-//                     ripple.style.cssText = `
-//                         position: absolute;
-//                         border-radius: 50%;
-//                         background: rgba(29, 185, 84, 0.3);
-//                         transform: scale(0);
-//                         animation: ripple 0.6s linear;
-//                         pointer-events: none;
-//                     `;
-
-//                     const rect = this.getBoundingClientRect();
-//                     const size = Math.max(rect.width, rect.height);
-//                     const x = e.clientX - rect.left - size / 2;
-//                     const y = e.clientY - rect.top - size / 2;
-
-//                     ripple.style.width = ripple.style.height = size + 'px';
-//                     ripple.style.left = x + 'px';
-//                     ripple.style.top = y + 'px';
-
-//                     this.style.position = 'relative';
-//                     this.appendChild(ripple);
-
-//                     setTimeout(() => {
-//                         ripple.remove();
-//                     }, 600);
-
-//                     // Navigate after animation
-//                     setTimeout(() => {
-//                         window.location.href = link.href;
-//                     }, 300);
-//                 }
-//             }
-//         });
-//     });
-
-//     // Add CSS for ripple effect
-//     const style = document.createElement('style');
-//     style.textContent = `
-//         @keyframes ripple {
-//             to {
-//                 transform: scale(4);
-//                 opacity: 0;
-//             }
-//         }
-//     `;
-//     document.head.appendChild(style);
-
-//     // Parallax effect for section header
-//     window.addEventListener('scroll', function () {
-//         const scrolled = window.pageYOffset;
-//         // const parallax = document.querySelector('.section-header h1');
-//         if (parallax) {
-//             const rate = scrolled * -0.5;
-//             parallax.style.transform = `translateY(${rate}px)`;
-//         }
-//     });
-// });
+prevBtn.addEventListener('click', () => {
+    slider.scrollBy({ left: -scrollStep, behavior: 'smooth' });
+});
 
 
 
