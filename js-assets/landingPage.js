@@ -1,9 +1,9 @@
-
 // Navbar Script
 document.addEventListener('DOMContentLoaded', function () {
     const navItems = document.querySelectorAll('.nav-item');
     const navToggle = document.querySelector('.nav-toggle');
     const navMenu = document.querySelector('.nav-menu');
+    const overlay = document.querySelector('.menu-overlay'); // blur overlay
 
     // Toggle menu on mobile
     navToggle.addEventListener('click', () => {
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Close menu when clicking on nav link (mobile)
-    document.querySelectorAll('.nav-item').forEach(item => {
+    navItems.forEach(item => {
         item.addEventListener('click', () => {
             if (window.innerWidth <= 991) {
                 navMenu.classList.remove('active');
@@ -32,6 +32,26 @@ document.addEventListener('DOMContentLoaded', function () {
     navItems.forEach(item => {
         const megaMenu = item.querySelector('.mega-menu');
         if (megaMenu) {
+            //  For Desktop Hover
+            item.addEventListener('mouseenter', () => {
+                if (window.innerWidth > 991) {
+                    megaMenu.style.display = 'grid';
+                    overlay.style.display = 'block';
+                }
+            });
+
+            item.addEventListener('mouseleave', () => {
+                if (window.innerWidth > 991) {
+                    setTimeout(() => {
+                        if (!item.matches(':hover') && !megaMenu.matches(':hover')) {
+                            megaMenu.style.display = 'none';
+                            overlay.style.display = 'none';
+                        }
+                    }, 100);
+                }
+            });
+
+            //  For Mobile Click
             item.addEventListener('click', function (e) {
                 if (window.innerWidth <= 991) {
                     e.preventDefault();
@@ -40,87 +60,14 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     });
-});
 
-
-
-// Carousel Script
-document.addEventListener('DOMContentLoaded', function () {
-    const carouselInner = document.querySelector('.carousel-inner');
-    const carouselItems = document.querySelectorAll('.carousel-item');
-    const prevButton = document.querySelector('.carousel-control.prev');
-    const nextButton = document.querySelector('.carousel-control.next');
-    const indicators = document.querySelectorAll('.indicator');
-
-    let currentSlide = 0;
-    const totalSlides = carouselItems.length;
-
-    function showSlide(index) {
-        carouselItems.forEach(item => item.classList.remove('active'));
-        indicators.forEach(indicator => indicator.classList.remove('active'));
-
-        carouselItems[index].classList.add('active');
-        indicators[index].classList.add('active');
-        currentSlide = index;
-    }
-
-    function nextSlide() {
-        let nextIndex = (currentSlide + 1) % totalSlides;
-        showSlide(nextIndex);
-    }
-
-    function prevSlide() {
-        let prevIndex = (currentSlide - 1 + totalSlides) % totalSlides;
-        showSlide(prevIndex);
-    }
-
-    let slideInterval = setInterval(nextSlide, 5000);
-
-    prevButton.addEventListener('click', () => {
-        prevSlide();
-        resetInterval();
-    });
-
-    nextButton.addEventListener('click', () => {
-        nextSlide();
-        resetInterval();
-    });
-
-    indicators.forEach((indicator, index) => {
-        indicator.addEventListener('click', () => {
-            showSlide(index);
-            resetInterval();
+    // Close mega menu when overlay clicked
+    overlay.addEventListener('click', () => {
+        overlay.style.display = 'none';
+        document.querySelectorAll('.mega-menu').forEach(menu => {
+            menu.style.display = 'none';
         });
     });
-
-    function resetInterval() {
-        clearInterval(slideInterval);
-        slideInterval = setInterval(nextSlide, 5000);
-    }
-
-    // Pause on hover
-    carouselInner.addEventListener('mouseenter', () => clearInterval(slideInterval));
-    carouselInner.addEventListener('mouseleave', resetInterval);
-
-    // Keyboard control
-    document.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowLeft') { prevSlide(); resetInterval(); }
-        else if (e.key === 'ArrowRight') { nextSlide(); resetInterval(); }
-    });
-
-    // Touch swipe
-    let touchStartX = 0, touchEndX = 0;
-    carouselInner.addEventListener('touchstart', e => touchStartX = e.changedTouches[0].screenX);
-    carouselInner.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        const swipeThreshold = 50;
-        if (touchEndX < touchStartX - swipeThreshold) { nextSlide(); resetInterval(); }
-        else if (touchEndX > touchStartX + swipeThreshold) { prevSlide(); resetInterval(); }
-    }
 });
 
 
@@ -550,31 +497,33 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Add hover effects
-    faqItems.forEach(item => {
-        const question = item.querySelector('.faq-question');
+    // FAQ hover image change
+    const faqImg = document.querySelector('.faq-img');
+    const faqItemsList = document.querySelectorAll('.faq-item');
 
-        question.addEventListener('mouseenter', function () {
-            if (!item.classList.contains('active')) {
-                this.style.background = '#f8f9fa';
+    faqItemsList.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+            const newImg = item.getAttribute('data-img');
+            if (newImg) {
+                faqImg.style.opacity = 0;
+                setTimeout(() => {
+                    faqImg.src = newImg;
+                    faqImg.style.opacity = 1;
+                }, 200);
             }
         });
 
-        question.addEventListener('mouseleave', function () {
-            if (!item.classList.contains('active')) {
-                this.style.background = 'transparent';
-            }
+        // Optional: Reset to default image when mouse leaves
+        item.addEventListener('mouseleave', () => {
+            faqImg.style.opacity = 0;
+            setTimeout(() => {
+                faqImg.src = './images/cat.jpg';
+                faqImg.style.opacity = 1;
+            }, 200);
         });
     });
 
-    // Close FAQ when clicking outside
-    document.addEventListener('click', function (e) {
-        if (!e.target.closest('.faq-item')) {
-            faqItems.forEach(item => {
-                item.classList.remove('active');
-            });
-        }
-    });
+
 
     // Keyboard navigation
     document.addEventListener('keydown', function (e) {
@@ -629,3 +578,5 @@ document.addEventListener('DOMContentLoaded', function () {
         copyrightElement.innerHTML = copyrightElement.innerHTML.replace('2025', currentYear);
     }
 });
+
+var swiper = new Swiper(".mySwiper", {});

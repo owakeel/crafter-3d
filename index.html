@@ -7,239 +7,242 @@
     <title>crafter-3d</title>
     <link rel="stylesheet" href="./css-assets/landingPage.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
 
-    <!-- Navbar Start -->
-    <div class="container">
+    <header>
         <nav class="navbar">
-            <div class="nav-wrapper">
-                <div>
-                    <img class="logo-img"
-                        src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816615/logo_u1ghqd.png" alt="Logo">
+            <div class="container">
+                <div class="nav-wrapper">
+                    <div>
+                        <img class="logo-img"
+                            src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816615/logo_u1ghqd.png"
+                            alt="Logo">
+                    </div>
+
+                    <!-- Toggle Button -->
+                    <button class="nav-toggle" aria-label="Toggle navigation">
+                        ☰
+                    </button>
+
+                    <!-- Nav Menu -->
+                    <ul class="nav-menu">
+                        <li class="nav-item">
+                            Products ▾
+                            <div class="transparentdiv">
+                                <div class="mega-menu">
+                                    <div class="container">
+                                        <div class="products-section">
+                                            <div class="product-wraper">
+                                                <div class="mega-product-header">
+                                                    <h3 class="category-title">Crafter-3D Printers</h3>
+                                                    <div class="cta-buttons">
+                                                        <a href="#" class="btn ">Shop Now</a>
+                                                        <a href="#" class="btn ">Compare Models</a>
+                                                    </div>
+                                                </div>
+                                                <div class="products-grid">
+                                                    <div class="product-card">
+                                                        <img class="product-img"
+                                                            src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png"
+                                                            alt="Product Image">
+                                                        <div class="product-details">
+                                                            <div class="product-name">Crafter-3D H2 Series</div>
+                                                            <div class="product-desc">Advanced personal 3D printing
+                                                                solution for
+                                                                creators and professionals.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card">
+                                                        <img class="product-img"
+                                                            src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816625/Montura_3_iypeix.png"
+                                                            alt="Product Image">
+                                                        <div class="product-details">
+                                                            <div class="product-name">Crafter-3D X1C</div>
+                                                            <div class="product-desc">Flagship CoreXY printer built for
+                                                                precision
+                                                                and performance.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card">
+                                                        <img class="product-img"
+                                                            src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816625/Filamentos_bhrktn.png"
+                                                            alt="Product Image">
+                                                        <div class="product-details">
+                                                            <div class="product-name">Crafter-3D A1</div>
+                                                            <div class="product-desc">Full-sized 3D printer designed for
+                                                                industrial-grade projects.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card">
+                                                        <img class="product-img"
+                                                            src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816625/Montura_2_frssee.png"
+                                                            alt="Product Image">
+                                                        <div class="product-details">
+                                                            <div class="product-name">Crafter-3D Mini</div>
+                                                            <div class="product-desc">Compact and reliable 3D printer
+                                                                for home and
+                                                                education use.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card">
+                                                        <img class="product-img"
+                                                            src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816624/Montura_1_mxd3i5.png"
+                                                            alt="Product Image">
+                                                        <div class="product-details">
+                                                            <div class="product-name">Crafter-3D P1</div>
+                                                            <div class="product-desc">High-performance printer built for
+                                                                speed,
+                                                                stability, and quality.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="product-wraper">
+                                                <div class="mega-product-header">
+                                                    <h3 class="category-title">Crafter-3D Material Systems</h3>
+                                                    <div class="cta-buttons">
+                                                        <a href="#" class="btn ">Shop Now</a>
+                                                        <a href="#" class="btn ">Compare Models</a>
+                                                    </div>
+                                                </div>
+                                                <div class="products-grid">
+                                                    <div class="product-card">
+                                                        <img class="product-img"
+                                                            src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png"
+                                                            alt="Product Image">
+                                                        <div class="product-details">
+                                                            <div class="product-name">Crafter-3D AMS Pro</div>
+                                                            <div class="product-desc">Automated material system
+                                                                optimized for
+                                                                multi-filament printing.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card">
+                                                        <img class="product-img"
+                                                            src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png"
+                                                            alt="Product Image">
+                                                        <div class="product-details">
+                                                            <div class="product-name">Crafter-3D AMS HT</div>
+                                                            <div class="product-desc">High-temp system for printing
+                                                                specialized
+                                                                performance materials.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card">
+                                                        <img class="product-img"
+                                                            src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png"
+                                                            alt="Product Image">
+                                                        <div class="product-details">
+                                                            <div class="product-name">Crafter-3D AMS 2</div>
+                                                            <div class="product-desc">Second-gen automatic feeding
+                                                                system with
+                                                                improved reliability.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card">
+                                                        <img class="product-img"
+                                                            src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png"
+                                                            alt="Product Image">
+                                                        <div class="product-details">
+                                                            <div class="product-name">Crafter-3D AMS Original</div>
+                                                            <div class="product-desc">Smart material switching system
+                                                                for efficient
+                                                                workflow.</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="product-card">
+                                                        <img class="product-img"
+                                                            src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png"
+                                                            alt="Product Image">
+                                                        <div class="product-details">
+                                                            <div class="product-name">Crafter-3D AMS Lite</div>
+                                                            <div class="product-desc">Affordable material handling
+                                                                solution for
+                                                                entry-level creators.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                        </li>
+                        <li class="nav-item">Filament</li>
+                        <li class="nav-item">Accessories</li>
+                        <li class="nav-item">Software</li>
+                        <li class="nav-item">MakerWorld</li>
+                        <li class="nav-item">Explore</li>
+                        <li class="nav-item">Support</li>
+                    </ul>
                 </div>
-
-                <!-- Toggle Button -->
-                <button class="nav-toggle" aria-label="Toggle navigation">
-                    ☰
-                </button>
-
-                <!-- Nav Menu -->
-                <ul class="nav-menu">
-                    <li class="nav-item">
-                        Products ▾
-                        <div class="mega-menu">
-                            <div class="products-section">
-                                <div class="product-wraper">
-                                    <div class="mega-product-header">
-                                        <h3 class="category-title">Crafter-3D Printers</h3>
-                                        <div class="cta-buttons">
-                                            <a href="#" class="btn ">Shop Now</a>
-                                            <a href="#" class="btn ">Compare Models</a>
-                                        </div>
-                                    </div>
-                                    <div class="products-grid">
-                                        <div class="product-card">
-                                            <img class="product-img"
-                                                src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png"
-                                                alt="Product Image">
-                                            <div class="product-details">
-                                                <div class="product-name">Crafter-3D H2 Series</div>
-                                                <div class="product-desc">Advanced personal 3D printing solution for
-                                                    creators and professionals.</div>
-                                            </div>
-                                        </div>
-                                        <div class="product-card">
-                                            <img class="product-img"
-                                                src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816625/Montura_3_iypeix.png"
-                                                alt="Product Image">
-                                            <div class="product-details">
-                                                <div class="product-name">Crafter-3D X1C</div>
-                                                <div class="product-desc">Flagship CoreXY printer built for precision
-                                                    and performance.</div>
-                                            </div>
-                                        </div>
-                                        <div class="product-card">
-                                            <img class="product-img"
-                                                src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816625/Filamentos_bhrktn.png"
-                                                alt="Product Image">
-                                            <div class="product-details">
-                                                <div class="product-name">Crafter-3D A1</div>
-                                                <div class="product-desc">Full-sized 3D printer designed for
-                                                    industrial-grade projects.</div>
-                                            </div>
-                                        </div>
-                                        <div class="product-card">
-                                            <img class="product-img"
-                                                src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816625/Montura_2_frssee.png"
-                                                alt="Product Image">
-                                            <div class="product-details">
-                                                <div class="product-name">Crafter-3D Mini</div>
-                                                <div class="product-desc">Compact and reliable 3D printer for home and
-                                                    education use.</div>
-                                            </div>
-                                        </div>
-                                        <div class="product-card">
-                                            <img class="product-img"
-                                                src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816624/Montura_1_mxd3i5.png"
-                                                alt="Product Image">
-                                            <div class="product-details">
-                                                <div class="product-name">Crafter-3D P1</div>
-                                                <div class="product-desc">High-performance printer built for speed,
-                                                    stability, and quality.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="product-wraper">
-                                    <div class="mega-product-header">
-                                        <h3 class="category-title">Crafter-3D Material Systems</h3>
-                                        <div class="cta-buttons">
-                                            <a href="#" class="btn ">Shop Now</a>
-                                            <a href="#" class="btn ">Compare Models</a>
-                                        </div>
-                                    </div>
-                                    <div class="products-grid">
-                                        <div class="product-card">
-                                            <img class="product-img"
-                                                src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png"
-                                                alt="Product Image">
-                                            <div class="product-details">
-                                                <div class="product-name">Crafter-3D AMS Pro</div>
-                                                <div class="product-desc">Automated material system optimized for
-                                                    multi-filament printing.</div>
-                                            </div>
-                                        </div>
-                                        <div class="product-card">
-                                            <img class="product-img"
-                                                src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png"
-                                                alt="Product Image">
-                                            <div class="product-details">
-                                                <div class="product-name">Crafter-3D AMS HT</div>
-                                                <div class="product-desc">High-temp system for printing specialized
-                                                    performance materials.</div>
-                                            </div>
-                                        </div>
-                                        <div class="product-card">
-                                            <img class="product-img"
-                                                src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png"
-                                                alt="Product Image">
-                                            <div class="product-details">
-                                                <div class="product-name">Crafter-3D AMS 2</div>
-                                                <div class="product-desc">Second-gen automatic feeding system with
-                                                    improved reliability.</div>
-                                            </div>
-                                        </div>
-                                        <div class="product-card">
-                                            <img class="product-img"
-                                                src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png"
-                                                alt="Product Image">
-                                            <div class="product-details">
-                                                <div class="product-name">Crafter-3D AMS Original</div>
-                                                <div class="product-desc">Smart material switching system for efficient
-                                                    workflow.</div>
-                                            </div>
-                                        </div>
-                                        <div class="product-card">
-                                            <img class="product-img"
-                                                src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png"
-                                                alt="Product Image">
-                                            <div class="product-details">
-                                                <div class="product-name">Crafter-3D AMS Lite</div>
-                                                <div class="product-desc">Affordable material handling solution for
-                                                    entry-level creators.</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </li>
-                    <li class="nav-item">Filament</li>
-                    <li class="nav-item">Accessories</li>
-                    <li class="nav-item">Software</li>
-                    <li class="nav-item">MakerWorld</li>
-                    <li class="nav-item">Explore</li>
-                    <li class="nav-item">Support</li>
-                </ul>
             </div>
         </nav>
-    </div>
+    </header>
+    <div class="menu-overlay"></div>
+
     <!-- Navbar End -->
 
-    <!-- Carousel Section -->
-    <section class="carousel-section">
-        <div class="carousel">
-            <!-- Carousel Items -->
-            <div class="carousel-inner">
-                <div class="carousel-item active"
-                    style="background-image: url('https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816631/banner_1_es_nvh4jv.png')">
-                    <div class="container">
-                        <div class="carousel-content">
-                            <div class="carousel-text">
-                                <h2>Bambu Lab X1C</h2>
-                                <h3>A Leap in 3D Printing the Flagship Core-XY 3D Printer</h3>
-                                <div class="buttons">
-                                    <a href="#" class="carousel-btn carousel-btn-primary">Buy now</a>
-                                    <a href="#" class="carousel-btn carousel-btn-secondary">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item"
-                    style="background-image: url('https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816627/Premio_fondo_v%C3%ADdeo_xes860.png')">
-                    <div class="container">
-                        <div class="carousel-content">
-                            <div class="carousel-text">
-                                <h2>Advanced Technology</h2>
-                                <h3>Experience the future of 3D printing with cutting-edge features</h3>
-                                <div class="buttons">
-                                    <a href="#" class="carousel-btn carousel-btn-primary">Buy now</a>
-                                    <a href="#" class="carousel-btn carousel-btn-secondary">Learn more</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-item"
-                    style="background-image: url('https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816628/IMG_4257.jpeg_opkhvd.jpg')">
-                    <div class="container">
-                        <div class="carousel-content">
-                            <div class="carousel-text">
-                                <h2>Precision Engineering</h2>
-                                <h3>Unmatched accuracy and reliability for professional results</h3>
-                                <div class="buttons">
-                                    <a href="#" class="carousel-btn carousel-btn-primary">Buy now</a>
-                                    <a href="#" class="carousel-btn carousel-btn-secondary">Learn more</a>
-                                </div>
+   <!-- Carousel Section -->
+<section class="carousel-section">
+    <!-- Swiper -->
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide" style="background-image: url('https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816631/banner_1_es_nvh4jv.png')">
+                <div class="container">
+                    <div class="carousel-content">
+                        <div class="carousel-text">
+                            <h2>Bambu Lab X1C</h2>
+                            <h3>A Leap in 3D Printing the Flagship Core-XY 3D Printer</h3>
+                            <div class="buttons">
+                                <a href="#" class="carousel-btn carousel-btn-primary">Buy now</a>
+                                <a href="#" class="carousel-btn carousel-btn-secondary">Learn more</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Carousel Controls -->
-            <button class="carousel-control prev">
-                &lt;
-            </button>
-            <button class="carousel-control next">
-                &gt;
-            </button>
+            <!-- Slide 2 -->
+            <div class="swiper-slide" style="background-image: url('https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816627/Premio_fondo_v%C3%ADdeo_xes860.png')">
+                <div class="container">
+                    <div class="carousel-content">
+                        <div class="carousel-text">
+                            <h2>Advanced Technology</h2>
+                            <h3>Experience the future of 3D printing with cutting-edge features</h3>
+                            <div class="buttons">
+                                <a href="#" class="carousel-btn carousel-btn-primary">Buy now</a>
+                                <a href="#" class="carousel-btn carousel-btn-secondary">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-            <!-- Carousel Indicators -->
-            <div class="carousel-indicators">
-                <span class="indicator active" data-slide="0"></span>
-                <span class="indicator" data-slide="1"></span>
-                <span class="indicator" data-slide="2"></span>
+            <!-- Slide 3 -->
+            <div class="swiper-slide" style="background-image: url('https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816628/IMG_4257.jpeg_opkhvd.jpg')">
+                <div class="container">
+                    <div class="carousel-content">
+                        <div class="carousel-text">
+                            <h2>Precision Engineering</h2>
+                            <h3>Unmatched accuracy and reliability for professional results</h3>
+                            <div class="buttons">
+                                <a href="#" class="carousel-btn carousel-btn-primary">Buy now</a>
+                                <a href="#" class="carousel-btn carousel-btn-secondary">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </section>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+</section>
 
 
 
@@ -536,102 +539,73 @@
             </div>
 
             <div class="faq-container">
-                <!-- FAQ Item 1 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What's the best thing about Switzerland?</h3>
-                        <span class="faq-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
+                <div class="faq-wraper">
+                    <div class="faq-wraper-img">
+                        <img class="faq-img" src="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/IMG_4266_zpovzm.jpg" alt="FAQ Image">
                     </div>
-                    <div class="faq-answer">
-                        <p>I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing
-                            elit. Quas cupiditate laboriosam fugiat.</p>
-                    </div>
-                </div>
 
-                <div class="faq-divider"></div>
+                    <div class="faq-insid-continer">
+                        <div class="faq-item" data-img="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816625/Filamentos_bhrktn.png">
+                            <div class="faq-question">
+                                <h3>What's the best thing about Switzerland?</h3>
+                                <span class="faq-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>I don't know, but the flag is a big plus.</p>
+                            </div>
+                        </div>
 
-                <!-- FAQ Item 2 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>How do you make holy water?</h3>
-                        <span class="faq-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>You boil the hell out of it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                            cupiditate laboriosam fugiat.</p>
-                    </div>
-                </div>
+                        <div class="faq-item" data-img="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816626/Pieza_1_iyirod.png">
+                            <div class="faq-question">
+                                <h3>How do you make holy water?</h3>
+                                <span class="faq-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>You boil the hell out of it.</p>
+                            </div>
+                        </div>
 
-                <div class="faq-divider"></div>
-
-                <!-- FAQ Item 3 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>What do you call someone with no body and no nose?</h3>
-                        <span class="faq-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Nobody knows. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate
-                            laboriosam fugiat.</p>
-                    </div>
-                </div>
-
-                <div class="faq-divider"></div>
-
-                <!-- FAQ Item 4 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Why do you never see elephants hiding in trees?</h3>
-                        <span class="faq-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Because they're so good at it. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas
-                            cupiditate laboriosam fugiat.</p>
-                    </div>
-                </div>
-
-                <div class="faq-divider"></div>
-
-                <!-- FAQ Item 5 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Why can't you hear a pterodactyl go to the bathroom?</h3>
-                        <span class="faq-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Because the pee is silent. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam,
-                            quas voluptatibus ex culpa ipsum, aspernatur blanditiis fugiat ullam magnam suscipit
-                            deserunt illum natus facilis atque vero consequatur! Quisquam, debitis error.</p>
-                    </div>
-                </div>
-
-                <div class="faq-divider"></div>
-
-                <!-- FAQ Item 6 -->
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Why did the invisible man turn down the job offer?</h3>
-                        <span class="faq-toggle">
-                            <i class="fas fa-chevron-down"></i>
-                        </span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>He couldn't see himself doing it. Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            Eveniet perspiciatis officiis corrupti tenetur. Temporibus ut voluptatibus, perferendis sed
-                            unde rerum deserunt eius.</p>
+                        <div class="faq-item" data-img="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816625/Montura_3_iypeix.png">
+                            <div class="faq-question">
+                                <h3>What do you call someone with no body and no nose?</h3>
+                                <span class="faq-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Nobody knows.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item" data-img="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816625/Montura_3_iypeix.png">
+                            <div class="faq-question">
+                                <h3>What do you call someone with no body and no nose?</h3>
+                                <span class="faq-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Nobody knows.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item" data-img="https://res.cloudinary.com/dfq6dppjb/image/upload/v1759816625/Montura_3_iypeix.png">
+                            <div class="faq-question">
+                                <h3>What do you call someone with no body and no nose?</h3>
+                                <span class="faq-toggle">
+                                    <i class="fas fa-chevron-down"></i>
+                                </span>
+                            </div>
+                            <div class="faq-answer">
+                                <p>Nobody knows.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+
         </div>
     </section>
 
@@ -727,6 +701,8 @@
         </div>
     </footer>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./js-assets/landingPage.js"></script>
 </body>
 
