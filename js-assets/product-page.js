@@ -1,3 +1,94 @@
+// Carousel functionality
+class Carousel {
+  constructor() {
+    this.slides = document.querySelectorAll(".carousel-slide")
+    this.dots = document.querySelectorAll(".dot")
+    this.prevBtn = document.querySelector(".carousel-arrow.prev")
+    this.nextBtn = document.querySelector(".carousel-arrow.next")
+    this.currentSlide = 0
+    this.autoPlayInterval = null
+    this.autoPlayDelay = 4000
+    this.pauseDelay = 8000
+
+    this.init()
+  }
+
+  init() {
+    // Add event listeners for navigation arrows
+    this.prevBtn.addEventListener("click", () => this.prevSlide())
+    this.nextBtn.addEventListener("click", () => this.nextSlide())
+
+    // Add event listeners for dots
+    this.dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => this.goToSlide(index))
+    })
+
+    // Start auto-play
+    this.startAutoPlay()
+
+    // Pause auto-play on hover
+    const container = document.querySelector(".carousel-container")
+    container.addEventListener("mouseenter", () => this.stopAutoPlay())
+    container.addEventListener("mouseleave", () => this.startAutoPlay())
+  }
+
+  goToSlide(index) {
+    // Remove active class from current slide and dot
+    this.slides[this.currentSlide].classList.remove("active")
+    this.dots[this.currentSlide].classList.remove("active")
+
+    // Update current slide
+    this.currentSlide = index
+
+    // Add active class to new slide and dot
+    this.slides[this.currentSlide].classList.add("active")
+    this.dots[this.currentSlide].classList.add("active")
+
+    // Reset auto-play when manually navigating
+    this.resetAutoPlay()
+  }
+
+  nextSlide() {
+    const nextIndex = (this.currentSlide + 1) % this.slides.length
+    this.goToSlide(nextIndex)
+  }
+
+  prevSlide() {
+    const prevIndex = (this.currentSlide - 1 + this.slides.length) % this.slides.length
+    this.goToSlide(prevIndex)
+  }
+
+  startAutoPlay() {
+    this.stopAutoPlay()
+    this.autoPlayInterval = setInterval(() => {
+      this.nextSlide()
+    }, this.autoPlayDelay)
+  }
+
+  stopAutoPlay() {
+    if (this.autoPlayInterval) {
+      clearInterval(this.autoPlayInterval)
+      this.autoPlayInterval = null
+    }
+  }
+
+  resetAutoPlay() {
+    this.stopAutoPlay()
+    setTimeout(() => {
+      this.startAutoPlay()
+    }, this.pauseDelay)
+  }
+}
+
+// Initialize carousel when DOM is loaded
+document.addEventListener("DOMContentLoaded", () => {
+  new Carousel()
+})
+
+
+
+
+
 // Products Page functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Product filtering
