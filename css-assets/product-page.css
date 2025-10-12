@@ -545,10 +545,11 @@ body {
 /* Products Card */
 .products-card-section {
     padding: 80px 0;
-    background-image: url("../images/background-img-4.png");
-    background-size: cover;
+    background: #F8F9FA;
+    /* background-image: url("../images/background-img-4.png"); */
+    /* background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
 }
 
 .products-grid {
@@ -559,7 +560,7 @@ body {
 }
 
 .product-card {
-    background: rgba(0, 0, 0, 0.08);
+    background: rgb(0 0 0 / 0%);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(7px);
     border-radius: 20px;
@@ -880,6 +881,28 @@ body {
     font-size: 1.1rem;
 }
 
+.notify-btn {
+  width: 100%;
+  padding: 12px 24px;
+  background-color: #ffffff;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+}
+
+.notify-btn:hover {
+  background-color: #2A5599;
+  border-color: #2A5599;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(3, 67, 139, 0.3);
+}
+
 /* Load More */
 .load-more-container {
     text-align: center;
@@ -927,70 +950,239 @@ body {
 }
 
 /* Features Section */
-.features-section {
-    padding: 80px 0;
-    background: #f8f9fa;
+
+.flash-sale-section {
+  padding: 80px 0;
+  background: #f8f9fa;
 }
 
+
+
 .section-header {
-    text-align: center;
-    margin-bottom: 60px;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
 .section-header h2 {
-    font-size: 2.5rem;
-    color: #1a1a1a;
-    margin-bottom: 15px;
-    font-weight: 700;
+  font-size: 2.2rem;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
 .section-header p {
-    color: #666;
-    font-size: 1.2rem;
+  color: #666;
+  font-size: 1.05rem;
 }
 
-.features-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+/* Swiper specific container tweaks */
+.swiper {
+  position: relative;
+  padding: 10px 0 30px;
 }
 
-.feature-card {
-    background: white;
-    padding: 40px 30px;
-    border-radius: 15px;
-    text-align: center;
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease;
+.swiper {
+    height: 560px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+    z-index: 1;
+    display: block
 }
 
-.feature-card:hover {
-    transform: translateY(-5px);
+/* swiper slides center & spacing */
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  height: auto; 
+  padding: 10px;
 }
 
-.feature-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, #3B6BB3, #2a5599);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 25px;
-    color: white;
-    font-size: 2rem;
+.flash-sale-card {
+  background: white;
+  min-height: 500px;
+  padding: 30px 24px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+  transition: transform .3s ease, box-shadow .3s ease;
+  width: 100%;
+  max-width: 360px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.feature-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 15px;
-    color: #1a1a1a;
-    font-weight: 600;
+.flash-sale-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.10);
 }
 
-.feature-card p {
-    color: #666;
-    line-height: 1.6;
+/* Card text */
+.flash-sale-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+  font-weight: 600;
+}
+
+.flash-sale-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 0.98rem;
+}
+
+/* Swiper pagination & arrows styling tweaks */
+.swiper-pagination-bullet {
+  opacity: 0.6;
+  background: #999;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #2a5599;
+}
+
+/* Increase clickable area for nav */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #2a5599;
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.9);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* responsive tweaks */
+@media (max-width: 640px) {
+  .section-header h2 { font-size: 1.6rem; }
+  .feature-card { padding: 22px; max-width: 100%; }
+  .feature-icon { width: 66px; height: 66px; font-size: 1.3rem; margin-bottom: 16px; }
+}
+
+.flash-sale-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.flash-sale-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.countdown-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.countdown-label {
+  font-size: 16px;
+  font-weight: 500;
+  color: #2A5599;
+}
+
+.countdown-timer {
+  display: flex;
+  gap: 8px;
+}
+
+.countdown-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #2A5599;
+  padding: 6px 12px;
+  border-radius: 6px;
+  min-width: 60px;
+  justify-content: center;
+}
+
+.countdown-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.countdown-unit {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.view-more-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #1a1a1a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.view-more-link:hover {
+  color: #2A5599;
+}
+
+.view-more-link svg {
+  transition: transform 0.3s ease;
+}
+
+.view-more-link:hover svg {
+  transform: translateX(4px);
+}
+
+.flash-sale-img img {
+    height: 250px;
+}
+
+.flash-sale-img{
+    position: relative;
+}
+
+.discount-badge {
+  position: absolute;
+  top: -17px;
+  left: -35px;
+  background-color: #2A5599;
+  color: #ffffff;
+  padding: 8px 12px;
+  border-radius: 0px 17px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(1, 86, 156, 0.3);
+}
+
+.discount-percent {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.discount-text {
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  margin-top: 2px;
 }
 
 /* Comparison Section */
@@ -1153,7 +1345,7 @@ body {
 
 .modal-close:hover {
     background: #f8f9fa;
-    color: #e74c3c;
+    color: #2A5599;
 }
 
 .modal-body {

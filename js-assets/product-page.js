@@ -395,4 +395,55 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-var swiper = new Swiper(".mySwiper", {});
+// init swiper
+const featuresSwiper = new Swiper('.features-swiper', {
+  // core
+  loop: true,
+  speed: 600,
+  slidesPerView: 1,
+  spaceBetween: 18,
+
+  // responsive breakpoints
+  breakpoints: {
+    640: {
+      slidesPerView: 1.2,
+      spaceBetween: 18
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 24
+    },
+    1300: {
+      slidesPerView: 3.3,
+      spaceBetween: 26
+    }
+  },
+
+  // autoplay (optional)
+  autoplay: {
+    delay: 3500,
+    disableOnInteraction: true,
+  },
+
+  // pagination & navigation
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+  // accessibility / control
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  },
+  grabCursor: true,
+  a11y: true
+});
